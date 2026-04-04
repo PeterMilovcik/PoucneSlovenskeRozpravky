@@ -1,0 +1,64 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*.nupkg
+*.snupkg
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+bld/
+
+# User-specific files
+appsettings.Development.json
+appsettings.Local.json
+
+# Secrets / API keys
+*.env
+.env.*
+secrets.json
+
+# Media files (large, generated)
+rozpravky/*/audio/*.mp3
+rozpravky/*/audio/*.wav
+rozpravky/*/video/*.mp4
+rozpravky/*/video/*.avi
+rozpravky/*/images/*.png
+rozpravky/*/images/*.jpg
+rozpravky/*/images/*.jpeg
+rozpravky/*/images/*.webp
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+
+# Rider
+.idea/
+*.sln.iml
+
+# Test results
+TestResults/
+*.trx
+
+# Copilot CLI session state
+.copilot/

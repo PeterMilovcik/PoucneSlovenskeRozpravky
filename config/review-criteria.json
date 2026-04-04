@@ -1,0 +1,167 @@
+{
+  "reviewCriteria": {
+    "name": "Hodnotiace kritériá pre slovenské detské rozprávky",
+    "version": "1.0",
+    "scoringSystem": {
+      "maxScorePerCategory": 20,
+      "totalMaxScore": 100,
+      "passingScore": 80,
+      "categoryMinimumScore": 12,
+      "description": "Každá kategória sa hodnotí na stupnici 0–20. Celkové skóre je súčet všetkých kategórií. Na schválenie je potrebných minimálne 80 bodov a žiadna kategória nesmie mať menej ako 12 bodov."
+    },
+    "categories": [
+      {
+        "id": "gramatika",
+        "name": "Gramatika a pravopis",
+        "weight": 20,
+        "description": "Hodnotenie správnosti slovenského jazyka, pravopisu, interpunkcie a gramatických pravidiel.",
+        "rubric": [
+          { "score": "18–20", "label": "Vynikajúce", "description": "Žiadne gramatické ani pravopisné chyby. Perfektná interpunkcia a správne použitie slovenských diakritických znamienok." },
+          { "score": "14–17", "label": "Dobré", "description": "Maximálne 1–2 drobné chyby, ktoré nenarúšajú čitateľnosť. Správna interpunkcia s minimálnymi odchýlkami." },
+          { "score": "12–13", "label": "Prijateľné", "description": "3–5 chýb, z toho žiadna závažná. Text je stále zrozumiteľný a čitateľný." },
+          { "score": "8–11", "label": "Nedostatočné", "description": "Viacero gramatických chýb, ktoré narúšajú plynulosť čítania." },
+          { "score": "0–7", "label": "Neprijateľné", "description": "Závažné a časté chyby, text vyžaduje kompletné prepracovanie." }
+        ],
+        "checkpoints": [
+          "Správny pravopis vrátane diakritiky (ď, ť, ň, ľ, š, č, ž, ý, á, é, í, ó, ú, ô, ä, ŕ, ĺ)",
+          "Správne skloňovanie a časovanie",
+          "Správne použitie interpunkcie (slovenské úvodzovky \u201E \u201C, čiarky, bodky)",
+          "Zhoda podmetu a prísudku",
+          "Správny slovosled",
+          "Konzistentný čas rozprávania"
+        ]
+      },
+      {
+        "id": "styl",
+        "name": "Štýl a jazyk",
+        "weight": 20,
+        "description": "Hodnotenie primeranosti jazyka pre cieľovú vekovú skupinu, plynulosti rozprávania a umeleckej kvality textu.",
+        "rubric": [
+          { "score": "18–20", "label": "Vynikajúce", "description": "Jazyk je dokonale prispôsobený deťom. Bohaté zmyslové opisy, živé dialógy, krásne prirovnania. Text plynie prirodzene." },
+          { "score": "14–17", "label": "Dobré", "description": "Jazyk je primeraný, opisy sú pútavé. Drobné štylistické nedostatky, ktoré nenarúšajú zážitok." },
+          { "score": "12–13", "label": "Prijateľné", "description": "Jazyk je funkčný, ale chýba mu farbitosť. Opisy sú príliš strohé alebo niektoré pasáže príliš komplikované." },
+          { "score": "8–11", "label": "Nedostatočné", "description": "Jazyk je často neprimerený veku — príliš zložitý alebo príliš zjednodušený. Monotónny štýl." },
+          { "score": "0–7", "label": "Neprijateľné", "description": "Štýl je úplne nevhodný pre detskú rozprávku. Absentujú opisy a dialóg." }
+        ],
+        "checkpoints": [
+          "Priemerná dĺžka vety 8–12 slov",
+          "Maximálna dĺžka vety 25 slov",
+          "Minimálne 85 % jednoduchých slov",
+          "Maximálne 10 % trpného rodu",
+          "Prítomnosť zmyslových opisov (farby, zvuky, vône)",
+          "Dialóg tvorí 20–40 % textu",
+          "Opakovanie a refény pre rytmickosť",
+          "Žiadne zakázané slová alebo vzory"
+        ]
+      },
+      {
+        "id": "logika",
+        "name": "Logika a štruktúra príbehu",
+        "weight": 20,
+        "description": "Hodnotenie konzistentnosti deja, logickej nadväznosti udalostí a správnej štruktúry príbehu.",
+        "rubric": [
+          { "score": "18–20", "label": "Vynikajúce", "description": "Príbeh má jasnú trojdielnu štruktúru. Zápletka sa vyvíja logicky, rozuzlenie je uspokojivé a prekvapivé. Postavy konajú konzistentne." },
+          { "score": "14–17", "label": "Dobré", "description": "Príbeh je logický s menšími nedostatkami v plynulosti. Štruktúra je jasná, rozuzlenie dáva zmysel." },
+          { "score": "12–13", "label": "Prijateľné", "description": "Základná štruktúra funguje, ale niektoré prechody sú náhle alebo chýba dostatočné budovanie napätia." },
+          { "score": "8–11", "label": "Nedostatočné", "description": "Dej obsahuje logické medzery alebo nekonzistentnosti. Rozuzlenie je neuspokojivé alebo príliš náhle." },
+          { "score": "0–7", "label": "Neprijateľné", "description": "Príbeh nemá jasnú štruktúru. Udalosti na seba nenadväzujú. Chýba rozuzlenie." }
+        ],
+        "checkpoints": [
+          "Jasný úvod s predstavením postáv a prostredia",
+          "Zrozumiteľný konflikt alebo výzva",
+          "Logická postupnosť udalostí",
+          "Konzistentné správanie postáv",
+          "Uspokojivé rozuzlenie konfliktu",
+          "Príbeh nemá nevysvetlené dejové línie",
+          "Vhodné tempo — ani príliš rýchle, ani príliš pomalé",
+          "Minimálne 3 scény alebo lokácie"
+        ]
+      },
+      {
+        "id": "vhodnost",
+        "name": "Vhodnosť pre deti",
+        "weight": 20,
+        "description": "Hodnotenie bezpečnosti a primeranosti obsahu pre cieľovú vekovú skupinu (3–8 rokov).",
+        "rubric": [
+          { "score": "18–20", "label": "Vynikajúce", "description": "Obsah je plne vhodný pre deti. Žiadne strašidelné, násilné alebo nevhodné prvky. Pozitívne posolstvo a bezpečné prostredie." },
+          { "score": "14–17", "label": "Dobré", "description": "Obsah je vhodný s drobnými prvkami napätia, ktoré sú vždy pozitívne rozuzlené." },
+          { "score": "12–13", "label": "Prijateľné", "description": "Väčšinou vhodné, ale niektoré časti môžu byť mierne znepokojujúce pre najmenšie deti." },
+          { "score": "8–11", "label": "Nedostatočné", "description": "Obsahuje prvky, ktoré môžu deti vystrašiť alebo zmiasť. Niektoré témy sú nad rámec vekovej skupiny." },
+          { "score": "0–7", "label": "Neprijateľné", "description": "Obsah je nevhodný pre deti — obsahuje násilie, strach bez rozuzlenia alebo nevhodné témy." }
+        ],
+        "checkpoints": [
+          "Žiadne zakázané slová (podľa style-guide.json)",
+          "Žiadne grafické opisy násilia",
+          "Strašidelné momenty sú vždy pozitívne vyriešené",
+          "Žiadne stereotypy (rodové, etnické, iné)",
+          "Pozitívne vzory správania",
+          "Žiadne výsmešky z fyzického vzhľadu",
+          "Vhodné pre predčítanie pred spaním",
+          "Žiadne komerčné značky alebo reklama"
+        ]
+      },
+      {
+        "id": "poucnost",
+        "name": "Poučnosť a morálne posolstvo",
+        "weight": 20,
+        "description": "Hodnotenie prítomnosti, kvality a prirodzenosti morálneho poučenia v príbehu.",
+        "rubric": [
+          { "score": "18–20", "label": "Vynikajúce", "description": "Morálne poučenie je krásne vpletené do príbehu. Dieťa ho pochopí prirodzene cez konanie postáv, nie cez priame poučovanie." },
+          { "score": "14–17", "label": "Dobré", "description": "Poučenie je jasné a zrozumiteľné. Väčšinou sa prejavuje cez dej, s miernym priamym vyjadrením na konci." },
+          { "score": "12–13", "label": "Prijateľné", "description": "Poučenie je prítomné, ale trochu násilne vložené alebo príliš priamočiare." },
+          { "score": "8–11", "label": "Nedostatočné", "description": "Poučenie je nejasné alebo ťažko identifikovateľné. Alebo je príliš moralizujúce a didaktické." },
+          { "score": "0–7", "label": "Neprijateľné", "description": "Chýba akékoľvek morálne posolstvo alebo je posolstvo nevhodné/zavádzajúce." }
+        ],
+        "checkpoints": [
+          "Príbeh obsahuje jasné morálne poučenie",
+          "Poučenie je nenásilne vpletené do deja",
+          "Poučenie zodpovedá jednej z definovaných tém (themes.json)",
+          "Hlavná postava sa niečo naučí alebo vyrastie",
+          "Poučenie je zrozumiteľné pre cieľovú vekovú skupinu",
+          "Nedochádza k priamemu moralizovaniu alebo kázaniu",
+          "Pozitívne správanie je odmenené prirodzene, nie magicky",
+          "Poučenie podporuje pozitívne hodnoty (priateľstvo, odvaha, poctivosť...)"
+        ]
+      }
+    ],
+    "overallPassCriteria": {
+      "minimumTotalScore": 80,
+      "minimumCategoryScore": 12,
+      "mandatoryPass": [
+        "Žiadna kategória nesmie mať skóre pod 12 bodov",
+        "Celkové skóre musí byť minimálne 80 bodov zo 100",
+        "Príbeh nesmie obsahovať žiadne zakázané slová",
+        "Príbeh musí mať jasné morálne poučenie"
+      ]
+    },
+    "reviewProcess": {
+      "steps": [
+        {
+          "step": 1,
+          "name": "Automatická kontrola",
+          "description": "Kontrola gramatiky (LanguageTool), štatistiky čitateľnosti, vyhľadávanie zakázaných slov."
+        },
+        {
+          "step": 2,
+          "name": "Štruktúrna kontrola",
+          "description": "Overenie prítomnosti povinných prvkov (úvod, konflikt, rozuzlenie, poučenie)."
+        },
+        {
+          "step": 3,
+          "name": "Obsahová kontrola",
+          "description": "Hodnotenie logiky deja, konzistentnosti postáv a kvality poučenia."
+        },
+        {
+          "step": 4,
+          "name": "Bezpečnostná kontrola",
+          "description": "Overenie vhodnosti pre deti — žiadne nevhodné prvky, stereotypy alebo strašidelný obsah."
+        },
+        {
+          "step": 5,
+          "name": "Finálne hodnotenie",
+          "description": "Celkové skórovanie podľa všetkých kategórií a rozhodnutie o schválení alebo vrátení na prepracovanie."
+        }
+      ]
+    }
+  }
+}

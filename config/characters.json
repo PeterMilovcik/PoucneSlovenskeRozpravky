@@ -1,0 +1,179 @@
+{
+  "characters": [
+    {
+      "id": "zv-sova",
+      "category": "zvieratá",
+      "name": "Múdra sova",
+      "description": "Stará sova žijúca na najvyššom strome v lese, ku ktorej chodia všetci po radu.",
+      "personalityTraits": ["múdra", "trpezlivá", "pokojná", "tajomná"]
+    },
+    {
+      "id": "zv-medved",
+      "category": "zvieratá",
+      "name": "Malý medveď",
+      "description": "Zvedavé medvieďa, ktoré objavuje svet a učí sa z každého dobrodružstva.",
+      "personalityTraits": ["zvedavý", "hravý", "dobrosrdečný", "trochu neohrabaný"]
+    },
+    {
+      "id": "zv-lisiak",
+      "category": "zvieratá",
+      "name": "Šibalský líšiak",
+      "description": "Chytrý líšiak, ktorý rád vymýšľa triky, ale postupne sa učí, že poctivosť je lepšia.",
+      "personalityTraits": ["šibalský", "chytrý", "rýchly", "postupne sa učiaci"]
+    },
+    {
+      "id": "zv-zajac",
+      "category": "zvieratá",
+      "name": "Ušatý zajko",
+      "description": "Plachý zajačik s veľkými ušami, ktorý je rýchly a vždy pripravený pomôcť priateľom.",
+      "personalityTraits": ["plachý", "rýchly", "verný", "starostlivý"]
+    },
+    {
+      "id": "zv-jezko",
+      "category": "zvieratá",
+      "name": "Bodlinkatý ježko",
+      "description": "Malý ježko, ktorý sa bojí, že ho nikto nechce objať kvôli jeho bodlinkám.",
+      "personalityTraits": ["citlivý", "opatrný", "láskavý", "trochu smutný"]
+    },
+    {
+      "id": "zv-vcielka",
+      "category": "zvieratá",
+      "name": "Pilná včielka",
+      "description": "Usilovná včielka, ktorá neúnavne zbiera peľ a učí ostatných o hodnote práce.",
+      "personalityTraits": ["usilovná", "organizovaná", "zodpovedná", "spoločenská"]
+    },
+    {
+      "id": "zv-vlk",
+      "category": "zvieratá",
+      "name": "Osamelý vlk",
+      "description": "Vlk, ktorý žije na okraji lesa a túži po priateľstve, no ostatní sa ho boja.",
+      "personalityTraits": ["osamelý", "silný", "verný", "nepochopený"]
+    },
+    {
+      "id": "zv-mravec",
+      "category": "zvieratá",
+      "name": "Silný mravček",
+      "description": "Maličký mravec, ktorý dokazuje, že aj najmenší tvor dokáže veľké veci.",
+      "personalityTraits": ["vytrvalý", "silný", "pracovitý", "tímový hráč"]
+    },
+    {
+      "id": "zv-motyl",
+      "category": "zvieratá",
+      "name": "Farebný motýľ",
+      "description": "Krásny motýľ, ktorý sa zmenil z nenápadnej húsenice a učí ostatných o premene.",
+      "personalityTraits": ["jemný", "krásny", "slobodný", "inšpiratívny"]
+    },
+    {
+      "id": "lud-princezna",
+      "category": "ľudia",
+      "name": "Statočná princezná",
+      "description": "Princezná, ktorá nečaká na záchranu — sama vyrieši problémy a pomáha ľuďom v kráľovstve.",
+      "personalityTraits": ["statočná", "nezávislá", "spravodlivá", "odhodlaná"]
+    },
+    {
+      "id": "lud-pastier",
+      "category": "ľudia",
+      "name": "Múdry pastier",
+      "description": "Skromný pastier z hôr, ktorý pozná prírodu a vie poradiť každému, kto sa zastaví.",
+      "personalityTraits": ["skromný", "múdry", "trpezlivý", "priateľský"]
+    },
+    {
+      "id": "lud-kovar",
+      "category": "ľudia",
+      "name": "Silný kováč",
+      "description": "Dedinský kováč so zlatým srdcom, ktorý kuje nielen železo, ale aj priateľstvá.",
+      "personalityTraits": ["silný", "pracovitý", "spoľahlivý", "veľkorysý"]
+    },
+    {
+      "id": "lud-babka",
+      "category": "ľudia",
+      "name": "Bylinková babička",
+      "description": "Múdra stará žena, ktorá pozná liečivé byliny a lieči nielen telo, ale aj dušu.",
+      "personalityTraits": ["múdra", "láskavá", "záhadná", "trpezlivá"]
+    },
+    {
+      "id": "lud-chlapec",
+      "category": "ľudia",
+      "name": "Zvedavý chlapček",
+      "description": "Malý chlapec z dediny, ktorý sa stále na všetko pýta a túži po dobrodružstve.",
+      "personalityTraits": ["zvedavý", "odvážny", "veselý", "neposedný"]
+    },
+    {
+      "id": "lud-dievca",
+      "category": "ľudia",
+      "name": "Kreatívne dievčatko",
+      "description": "Dievčatko, ktoré miluje maľovanie a vidí krásu vo všetkom okolo seba.",
+      "personalityTraits": ["kreatívna", "vnímavá", "snílkovská", "láskavá"]
+    },
+    {
+      "id": "rozp-vodnik",
+      "category": "rozprávkové bytosti",
+      "name": "Dobrotivý vodník",
+      "description": "Vodník z miestneho rybníka, ktorý chráni vodné tvory a občas pomáha deťom.",
+      "personalityTraits": ["záhadný", "ochranársky", "hravý", "spravodlivý"]
+    },
+    {
+      "id": "rozp-vila",
+      "category": "rozprávkové bytosti",
+      "name": "Lesná víla",
+      "description": "Malá víla, ktorá sa stará o kvety a pomáha strateným zvieratkám nájsť cestu domov.",
+      "personalityTraits": ["jemná", "starostlivá", "magická", "tichá"]
+    },
+    {
+      "id": "rozp-drak",
+      "category": "rozprávkové bytosti",
+      "name": "Priateľský drak",
+      "description": "Malý dráčik, ktorý sa snaží dokázať, že nie všetky draky sú zlé.",
+      "personalityTraits": ["priateľský", "nešikovný", "veľkodušný", "trochu plachý"]
+    },
+    {
+      "id": "rozp-skriatok",
+      "category": "rozprávkové bytosti",
+      "name": "Horský škriatok",
+      "description": "Šibalský škriatok z tatranských hôr, ktorý stráži poklady a skúša dobrotu ľudí.",
+      "personalityTraits": ["šibalský", "spravodlivý", "prefíkaný", "veselý"]
+    },
+    {
+      "id": "rozp-striga",
+      "category": "rozprávkové bytosti",
+      "name": "Múdra striga",
+      "description": "Stará čarodejnica, ktorá nie je zlá — len trochu čudná, a pomáha tým, čo majú dobré srdce.",
+      "personalityTraits": ["múdra", "excentrická", "spravodlivá", "trochu strašidelná"]
+    },
+    {
+      "id": "prir-dub",
+      "category": "príroda",
+      "name": "Starý dub",
+      "description": "Prastarý dub uprostred lúky, ktorý pamätá stovky rokov a rozpráva príbehy vetru.",
+      "personalityTraits": ["múdry", "trpezlivý", "ochranný", "stály"]
+    },
+    {
+      "id": "prir-potok",
+      "category": "príroda",
+      "name": "Zurčiaci potôčik",
+      "description": "Veselý potôčik, ktorý tečie cez les a spája rôzne miesta a bytosti.",
+      "personalityTraits": ["veselý", "neúnavný", "spájajúci", "čistý"]
+    },
+    {
+      "id": "prir-slnko",
+      "category": "príroda",
+      "name": "Teplé slniečko",
+      "description": "Láskavé slnko, ktoré svieti na všetkých rovnako a prináša teplo aj svetlo.",
+      "personalityTraits": ["láskavé", "spravodlivé", "teplé", "stále"]
+    },
+    {
+      "id": "prir-vietor",
+      "category": "príroda",
+      "name": "Hravý vetrík",
+      "description": "Neposedný vietor, ktorý roznáša semienka, správy a niekedy aj neplechu.",
+      "personalityTraits": ["hravý", "slobodný", "neposedný", "nápomocný"]
+    },
+    {
+      "id": "prir-hora",
+      "category": "príroda",
+      "name": "Tichá hora",
+      "description": "Majestátna hora, ktorá stojí pevne po stáročia a učí o sile a pokoji.",
+      "personalityTraits": ["tichá", "silná", "stála", "ochranná"]
+    }
+  ]
+}

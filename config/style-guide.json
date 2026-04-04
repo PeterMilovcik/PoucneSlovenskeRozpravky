@@ -1,0 +1,121 @@
+{
+  "styleGuide": {
+    "name": "Štýlová príručka pre slovenské detské rozprávky",
+    "version": "1.0",
+    "targetAudience": {
+      "ageRange": { "min": 3, "max": 8 },
+      "description": "Deti predškolského a mladšieho školského veku"
+    },
+    "toneDescriptors": [
+      "jemný",
+      "láskavý",
+      "povzbudivý",
+      "hravý",
+      "pokojný",
+      "poučný bez moralizovania",
+      "priateľský",
+      "teplý"
+    ],
+    "narrativeVoice": {
+      "person": "tretia osoba",
+      "tense": "minulý čas",
+      "style": "rozprávačský tón akoby babička rozpráva pred spaním"
+    },
+    "numericThresholds": {
+      "averageSentenceLength": { "min": 8, "max": 12, "unit": "slová" },
+      "maxSentenceLength": { "value": 25, "unit": "slová" },
+      "averageParagraphLength": { "min": 3, "max": 5, "unit": "vety" },
+      "dialoguePercentage": { "min": 20, "max": 40, "unit": "%" },
+      "simpleWordPercentage": { "min": 85, "unit": "%" },
+      "maxPassiveVoicePercentage": { "value": 10, "unit": "%" },
+      "fleschKincaidGradeLevel": { "min": 1.5, "max": 2.5 },
+      "maxConsecutiveNarrativeParagraphs": 3,
+      "minScenesPerStory": 3,
+      "maxCharactersPerStory": 5
+    },
+    "forbiddenWords": [
+      "smrť",
+      "zabiť",
+      "krv",
+      "nenávisť",
+      "hlúpy",
+      "tučný",
+      "škaredý",
+      "idiot",
+      "blbec",
+      "tupý",
+      "peklo",
+      "prekliaty",
+      "zatracený",
+      "debil"
+    ],
+    "forbiddenPatterns": [
+      {
+        "pattern": "príliš detailný popis násilia",
+        "description": "Žiadne grafické opisy fyzického ubližovania"
+      },
+      {
+        "pattern": "strašidelné opisy bez rozuzlenia",
+        "description": "Strach musí byť vždy rozuzlený pozitívne"
+      },
+      {
+        "pattern": "výsmech z fyzického vzhľadu",
+        "description": "Žiadne posmešky o tele, výške alebo vzhľade postáv"
+      },
+      {
+        "pattern": "stereotypné rodové role",
+        "description": "Princezné môžu zachraňovať, chlapci môžu plakať"
+      },
+      {
+        "pattern": "reklama alebo komerčné značky",
+        "description": "Žiadne zmienky o reálnych produktoch alebo značkách"
+      }
+    ],
+    "requiredElements": [
+      {
+        "element": "úvod",
+        "description": "Každá rozprávka musí mať jasný úvod, ktorý predstaví hlavnú postavu a prostredie."
+      },
+      {
+        "element": "konflikt",
+        "description": "Musí existovať jasný problém alebo výzva, ktorú hlavná postava rieši."
+      },
+      {
+        "element": "rozuzlenie",
+        "description": "Príbeh musí mať pozitívne rozuzlenie, kde sa problém vyrieši."
+      },
+      {
+        "element": "poučenie",
+        "description": "Morálne poučenie musí byť nenásilne vpletené do príbehu, nie priamo vyslovené."
+      },
+      {
+        "element": "dialóg",
+        "description": "Minimálne 20 % textu by malo byť dialóg — oživuje príbeh."
+      },
+      {
+        "element": "zmyslové detaily",
+        "description": "Opisy by mali zahŕňať farby, zvuky, vône a textúry blízke deťom."
+      },
+      {
+        "element": "opakovanie",
+        "description": "Použitie opakovania (trojnásobné opakovanie, refrény) pre zapamätateľnosť."
+      },
+      {
+        "element": "slovenské prostredie",
+        "description": "Príbeh by mal evokovať slovenské prostredie — hory, lúky, dediny, lesy."
+      }
+    ],
+    "vocabularyGuidelines": {
+      "preferSimpleWords": true,
+      "maxSyllablesPerWord": 4,
+      "allowedComplexWords": "Zložitejšie slová sú povolené, ak sú vzápätí vysvetlené kontextom.",
+      "dialectPolicy": "Jemné prvky slovenských nárečí sú vítané pre autentickosť, no text musí byť zrozumiteľný celoslovensky."
+    },
+    "formattingRules": {
+      "chapterTitles": "Kapitoly musia mať krátke, výstižné názvy (max 5 slov).",
+      "paragraphSpacing": "Medzi odsekmi vždy prázdny riadok.",
+      "dialogueFormat": "Dialóg sa označuje úvodzovkami \u201E \u201C (slovenské dolné a horné).",
+      "emphasis": "Zvýraznenie kurzívou, nie veľkými písmenami."
+    }
+  }
+}

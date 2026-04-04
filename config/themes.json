@@ -1,0 +1,228 @@
+{
+  "themes": [
+    {
+      "id": "priat-01",
+      "category": "priateľstvo",
+      "title": "Skutočný priateľ",
+      "description": "Príbeh o tom, ako sa pravé priateľstvo prejavuje v ťažkých chvíľach, nie len v radosti.",
+      "exampleMoral": "Skutočný priateľ sa spozná v núdzi, nie na hostine."
+    },
+    {
+      "id": "priat-02",
+      "category": "priateľstvo",
+      "title": "Nový kamarát",
+      "description": "Príbeh o prekonávaní strachu z neznámeho a otvorení sa novému priateľstvu.",
+      "exampleMoral": "Najkrajšie priateľstvá začínajú tam, kde končí strach z neznámeho."
+    },
+    {
+      "id": "odvah-01",
+      "category": "odvaha",
+      "title": "Malý hrdina",
+      "description": "Príbeh o tom, že odvaha neznamená nemať strach, ale prekonať ho pre dobro ostatných.",
+      "exampleMoral": "Odvážny nie je ten, kto sa nebojí, ale ten, kto koná napriek strachu."
+    },
+    {
+      "id": "odvah-02",
+      "category": "odvaha",
+      "title": "Hlas v tichosti",
+      "description": "Príbeh o odvahe povedať pravdu, aj keď je to ťažké.",
+      "exampleMoral": "Niekedy je najväčšia odvaha povedať tichým hlasom to, čo je správne."
+    },
+    {
+      "id": "pocti-01",
+      "category": "poctivosť",
+      "title": "Stratený groš",
+      "description": "Príbeh o tom, ako poctivosť prináša väčšiu odmenu než podvod.",
+      "exampleMoral": "Poctivo zarobený groš má väčšiu cenu než tucet ukradnutých."
+    },
+    {
+      "id": "pocti-02",
+      "category": "poctivosť",
+      "title": "Pravda vyjde najavo",
+      "description": "Príbeh o tom, ako sa klamstvo vždy nakoniec odhalí a pravda zvíťazí.",
+      "exampleMoral": "Kto hovorí pravdu, nepotrebuje dobrú pamäť."
+    },
+    {
+      "id": "laska-01",
+      "category": "láskavosť",
+      "title": "Kvapka dobroty",
+      "description": "Príbeh o tom, ako jeden láskavý skutok môže zmeniť celý deň niekomu inému.",
+      "exampleMoral": "Aj malá kvapka láskavosti dokáže rozjasniť celý tmavý deň."
+    },
+    {
+      "id": "laska-02",
+      "category": "láskavosť",
+      "title": "Dar bez odmeny",
+      "description": "Príbeh o nezištnej pomoci a radosti z dávania bez očakávania niečoho naspäť.",
+      "exampleMoral": "Najkrajší dar je ten, za ktorý nečakáme nič naspäť."
+    },
+    {
+      "id": "trpez-01",
+      "category": "trpezlivosť",
+      "title": "Kvietok na skale",
+      "description": "Príbeh o trpezlivosti a vytrvalosti, ktoré prinášajú výsledky aj v zdanlivo nemožných podmienkach.",
+      "exampleMoral": "Aj kvietok na holej skale vykvitne, ak má dosť trpezlivosti."
+    },
+    {
+      "id": "trpez-02",
+      "category": "trpezlivosť",
+      "title": "Pomalý krok",
+      "description": "Príbeh o tom, že pomalá a stála práca prináša lepšie výsledky než rýchle skratky.",
+      "exampleMoral": "Kto kráča pomaly, dôjde ďalej než ten, kto stále beží a padá."
+    },
+    {
+      "id": "prirod-01",
+      "category": "rešpekt k prírode",
+      "title": "Lesný strážca",
+      "description": "Príbeh o ochrane lesa a pochopení, že príroda je domovom mnohých bytostí.",
+      "exampleMoral": "Les nie je len drevo — je to domov tisícov tvorov, ktorí v ňom žijú."
+    },
+    {
+      "id": "prirod-02",
+      "category": "rešpekt k prírode",
+      "title": "Posledná rieka",
+      "description": "Príbeh o dôležitosti čistej vody a starostlivosti o potoky a rieky.",
+      "exampleMoral": "Voda je dar, ktorý si musíme vážiť, lebo bez nej niet života."
+    },
+    {
+      "id": "toler-01",
+      "category": "tolerancia",
+      "title": "Iný neznamená zlý",
+      "description": "Príbeh o prijatí odlišností a pochopení, že rôznorodosť je bohatstvo.",
+      "exampleMoral": "Svet by bol nudný, keby boli všetky kvety rovnaké."
+    },
+    {
+      "id": "toler-02",
+      "category": "tolerancia",
+      "title": "Dva svety",
+      "description": "Príbeh o stretnutí dvoch odlišných kultúr, ktoré sa od seba navzájom naučia niečo cenné.",
+      "exampleMoral": "Od každého sa môžeme niečo naučiť, ak sme ochotní počúvať."
+    },
+    {
+      "id": "vytrv-01",
+      "category": "vytrvalosť",
+      "title": "Mravec a hora",
+      "description": "Príbeh o tom, ako vytrvalý mravec dokáže prekonať aj zdanlivo neprekonateľnú prekážku.",
+      "exampleMoral": "Ani najväčšia hora nie je prekážkou pre toho, kto nepozná slovo vzdať sa."
+    },
+    {
+      "id": "vytrv-02",
+      "category": "vytrvalosť",
+      "title": "Tisíc pokusov",
+      "description": "Príbeh o tom, že neúspech nie je koniec, ale začiatok nového pokusu.",
+      "exampleMoral": "Každý neúspech ťa priblíži k úspechu, ak sa nevzdáš."
+    },
+    {
+      "id": "zodpo-01",
+      "category": "zodpovednosť",
+      "title": "Prvý záväzok",
+      "description": "Príbeh o tom, ako sa malé dieťa učí zodpovednosti starostlivosťou o zvieratko.",
+      "exampleMoral": "Kto sa stará o malé, dokáže sa postarať aj o veľké."
+    },
+    {
+      "id": "zodpo-02",
+      "category": "zodpovednosť",
+      "title": "Slovo je slovo",
+      "description": "Príbeh o dodržiavaní sľubov a zodpovednosti za vlastné slová.",
+      "exampleMoral": "Kto drží slovo, tomu ľudia veria. A dôvera je najväčší poklad."
+    },
+    {
+      "id": "vdacn-01",
+      "category": "vďačnosť",
+      "title": "Ďakujem, slnko",
+      "description": "Príbeh o vďačnosti za každodenné dary prírody a života, ktoré si často nevšímame.",
+      "exampleMoral": "Kto je vďačný za to, čo má, je bohatší než ten, kto má všetko a nič si neváži."
+    },
+    {
+      "id": "vdacn-02",
+      "category": "vďačnosť",
+      "title": "Starká a koláč",
+      "description": "Príbeh o vďačnosti voči starším ľuďom a docenení ich múdrosti a lásky.",
+      "exampleMoral": "Najsladší koláč je ten, ktorý upečie láska starej mamy."
+    },
+    {
+      "id": "spolup-01",
+      "category": "spolupráca",
+      "title": "Spoločnými silami",
+      "description": "Príbeh o tom, ako spolupráca dokáže vyriešiť problém, ktorý jednotlivec nezvládne.",
+      "exampleMoral": "Jedna ruka netliesca — spoločne dokážeme viac než sami."
+    },
+    {
+      "id": "spolup-02",
+      "category": "spolupráca",
+      "title": "Orchestrík v lese",
+      "description": "Príbeh o lesných zvieratkách, ktoré sa naučia hrať spolu a vytvoria krásnu melódiu.",
+      "exampleMoral": "Každý hlas je dôležitý, ak chceme vytvoriť krásnu pieseň."
+    },
+    {
+      "id": "sebau-01",
+      "category": "sebaúcta",
+      "title": "Malý, ale šikovný",
+      "description": "Príbeh o tom, že veľkosť nezáleží, keď máte veľké srdce a šikovné ruky.",
+      "exampleMoral": "Nie je dôležité, aký si veľký, ale aké veľké máš srdce."
+    },
+    {
+      "id": "sebau-02",
+      "category": "sebaúcta",
+      "title": "Moja cesta",
+      "description": "Príbeh o tom, že každý má svoju vlastnú cestu a nemusí sa porovnávať s ostatnými.",
+      "exampleMoral": "Neporovnávaj sa s inými — tvoja cesta je jedinečná a krásna."
+    },
+    {
+      "id": "empat-01",
+      "category": "empatia",
+      "title": "V cudzích topánkach",
+      "description": "Príbeh o pochopení pocitov druhých a o tom, ako sa vcítiť do niekoho iného.",
+      "exampleMoral": "Skôr než niekoho posúdiš, prejdi kúsok cesty v jeho topánkach."
+    },
+    {
+      "id": "empat-02",
+      "category": "empatia",
+      "title": "Plačúci obláčik",
+      "description": "Príbeh o tom, ako obláčik pochopí, že jeho dážď prináša radosť kvetom a zvieratkám.",
+      "exampleMoral": "Keď pochopíš, čo cítia ostatní, nájdeš svoj vlastný zmysel."
+    },
+    {
+      "id": "usilov-01",
+      "category": "usilovnosť",
+      "title": "Zlaté ruky",
+      "description": "Príbeh o tom, ako usilovná práca prináša výsledky a uznanie od ostatných.",
+      "exampleMoral": "Usilovné ruky vytvoria to, o čom lenivé len snívajú."
+    },
+    {
+      "id": "usilov-02",
+      "category": "usilovnosť",
+      "title": "Včielka a med",
+      "description": "Príbeh o pilnej včielke, ktorá učí ostatných, že sladký med si treba zaslúžiť prácou.",
+      "exampleMoral": "Najsladší med je ten, pre ktorý si musel priletieť najďalej."
+    },
+    {
+      "id": "mudro-01",
+      "category": "múdrosť",
+      "title": "Starý strom rozpráva",
+      "description": "Príbeh o múdrom starom strome, ktorý zdieľa životné poučenia s mladými stromčekmi.",
+      "exampleMoral": "Múdrosť neprichádza s rokmi, ale s ochotou počúvať a učiť sa."
+    },
+    {
+      "id": "mudro-02",
+      "category": "múdrosť",
+      "title": "Tri otázky",
+      "description": "Príbeh o tom, ako správne otázky sú dôležitejšie než rýchle odpovede.",
+      "exampleMoral": "Múdry nie je ten, kto pozná všetky odpovede, ale ten, kto vie položiť správnu otázku."
+    },
+    {
+      "id": "priat-03",
+      "category": "priateľstvo",
+      "title": "Most medzi brehmi",
+      "description": "Príbeh o dvoch zvieratkách na opačných brehoch rieky, ktoré postavia most priateľstva.",
+      "exampleMoral": "Priateľstvo je most, ktorý spája aj tie najvzdialenejšie brehy."
+    },
+    {
+      "id": "laska-03",
+      "category": "láskavosť",
+      "title": "Teplý šál",
+      "description": "Príbeh o starej babičke, ktorá pletie šály pre všetkých, kto má zimu, bez rozdielu.",
+      "exampleMoral": "Láskavosť hreje viac než najhrubší vlnený šál."
+    }
+  ]
+}
