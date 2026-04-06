@@ -1,14 +1,39 @@
 # 📢 Inštrukcie: Publikácia (Vydavateľ)
 
-> Tieto inštrukcie sú určené pre agenta **Vydavateľ**, ktorý riadi publikáciu rozprávky na všetky platformy — blog, Spotify podcast a YouTube.
+> Tieto inštrukcie sú určené pre agenta **Vydavateľ**, ktorý riadi publikáciu rozprávky na všetky platformy — blog (GitHub Pages) a YouTube.
 
 ## 1. Cieľ
 
-Pripraviť a publikovať rozprávku na tri platformy s konzistentnými metadátami a formátovaním. Každá platforma má špecifické požiadavky, ale hlavný obsah musí byť zhodný.
+Pripraviť a publikovať rozprávku na dostupné platformy s konzistentnými metadátami a formátovaním. Každá platforma má špecifické požiadavky, ale hlavný obsah musí byť zhodný.
 
-## 2. Blog post
+## 2. Blog post (GitHub Pages / Jekyll)
+
+### Platforma
+
+Blog beží na **GitHub Pages s Jekyll** generátorom:
+
+- **Repozitár**: `PeterMilovcik/PoucneSlovenskeRozpravky`
+- **Blog URL**: `https://petermilovcik.github.io/PoucneSlovenskeRozpravky/`
+- **Blog posty**: ukladajú sa do `docs/_rozpravky/` ako Markdown súbory s YAML front matter
+- **Obrázky**: ukladajú sa do `docs/images/[slug]/`
+- **Publikácia**: po `git commit` + `git push` sa GitHub Pages automaticky nasadí
+
+### Optimalizácia obrázkov pre blog
+
+Obrázky pre blog musia byť **optimalizované JPG** (nie PNG) kvôli rýchlemu načítaniu:
+
+```bash
+ffmpeg -i scene-XX.png -vf "scale=1200:-1" -q:v 4 -y docs/images/[slug]/scene-XX.jpg
+```
+
+- Vstup: PNG ilustrácie z `rozpravky/[id]/images/`
+- Výstup: JPG do `docs/images/[slug]/`
+- Šírka: 1200px, výška sa automaticky dopočíta
+- Kvalita: `-q:v 4` (dobrý pomer kvalita/veľkosť)
 
 ### Formát blog postu
+
+Súbor: `docs/_rozpravky/[slug].md`
 
 ```markdown
 ---
@@ -24,15 +49,14 @@ tags:
 length_minutes: [číslo]
 age_group: "6+"
 moral: "[Morálne ponaučenie]"
-cover_image: "/images/[slug]/cover.png"
-audio_url: "[URL na audio súbor]"
+cover_image: "/PoucneSlovenskeRozpravky/images/[slug]/cover.jpg"
 video_url: "[URL na YouTube video]"
 description: "[SEO opis, 150–160 znakov]"
 ---
 
 # [Názov rozprávky]
 
-![Obálka rozprávky](/images/[slug]/cover.png)
+![Obálka rozprávky](/PoucneSlovenskeRozpravky/images/[slug]/cover.jpg)
 
 **Dĺžka**: [X] minút | **Vek**: 6+ | **Téma**: [téma]
 
@@ -44,9 +68,8 @@ description: "[SEO opis, 150–160 znakov]"
 
 ---
 
-## 🎧 Počúvajte
+## 📺 Pozrite si
 
-- [Spotify](link)
 - [YouTube](link)
 
 ## 📚 Ďalšie rozprávky
@@ -63,7 +86,7 @@ description: "[SEO opis, 150–160 znakov]"
 | **date** | Dátum publikácie vo formáte YYYY-MM-DD |
 | **description** | SEO opis, 150–160 znakov, obsahuje kľúčové slová |
 | **tags** | 3–5 relevantných tagov v slovenčine |
-| **cover_image** | Cesta k obálke v pomere 16:9 |
+| **cover_image** | Cesta k obálke v JPG formáte (s prefixom `/PoucneSlovenskeRozpravky/`) |
 
 ### Vkladanie ilustrácií do textu
 
@@ -72,7 +95,7 @@ Ilustrácie vlož medzi scény príbehu:
 ```markdown
 [Text scény 1...]
 
-![Popis scény](/images/[slug]/scene-01.png)
+![Popis scény](/PoucneSlovenskeRozpravky/images/[slug]/scene-01.jpg)
 
 [Text scény 2...]
 ```
@@ -80,52 +103,47 @@ Ilustrácie vlož medzi scény príbehu:
 - Každý obrázok musí mať **alt text** popisujúci scénu
 - Alt text musí byť v **slovenčine**
 - Obrázky rozdeľujú text a zvyšujú čitateľnosť
+- Obrázky musia byť vo formáte **JPG** (optimalizované pre web)
 
 ## 3. Spotify podcast epizóda
 
-### Metadáta epizódy
-
-| Pole | Formát | Príklad |
-|------|--------|---------|
-| **Názov epizódy** | „[Číslo]. [Názov rozprávky]" | „5. Odvážny zajačik" |
-| **Popis** | Slovenský opis, max 4000 znakov | Viď šablónu nižšie |
-| **Season** | 1 (ak nie je inak) | 1 |
-| **Episode number** | Poradové číslo v katalógu | 5 |
-| **Episode type** | „full" | „full" |
-| **Explicit** | false | false |
-| **Language** | „sk" | „sk" |
-
-### Šablóna popisu epizódy
-
-```
-🧸 [Názov rozprávky]
-
-[1–2 vety popis príbehu — bez spoilerov!]
-
-⏱️ Dĺžka: [X] minút
-👶 Vhodné pre deti od 6 rokov
-📖 Téma: [téma]
-
-💡 Ponaučenie: [Morálne ponaučenie]
-
----
-
-Poučné Slovenské Rozprávky — originálne slovenské rozprávky pre malých aj veľkých.
-
-🌐 Blog: [URL]
-📺 YouTube: [URL]
-
-#rozprávky #deti #slovensko #poučné #predspaním
-```
-
-### Audio súbor pre podcast
-
-- Formát: **MP3, 192 kbps, 44.1 kHz, stereo**
-- Na začiatku: krátky úvodný zvuk (jingle) — ak existuje
-- Na konci: krátky záverečný zvuk + „Ďakujeme za počúvanie!"
-- Súbor: `audio/rozpravka.mp3` z adresára rozprávky
+> **TODO: Konfigurácia pre Spotify podcast bude doplnená neskôr.**
 
 ## 4. YouTube video
+
+### Kanál
+
+YouTube publikácia sa vykonáva na **brand kanál** (nie osobný účet):
+
+- **Kanál**: Poučné Slovenské Rozprávky
+- **URL kanála**: `https://www.youtube.com/channel/UCwclmlniUJeq5on7s8tEKBQ`
+- **YouTube Studio**: `https://studio.youtube.com/channel/UCwclmlniUJeq5on7s8tEKBQ`
+
+> ⚠️ **DÔLEŽITÉ**: Vždy naviguj PRIAMO na URL YouTube Studia brand kanála. Nepoužívaj `studio.youtube.com` bez špecifikácie kanála — to by otvorilo osobný účet.
+
+> ⚠️ **DÔLEŽITÉ**: YouTube NEUMOŽŇUJE nahradiť obsah videa. Ak je potrebná oprava, treba nahrať nové video a staré zmazať.
+
+### Workflow nahrávania na YouTube (cez Playwright MCP)
+
+Nahrávanie na YouTube sa vykonáva cez **Playwright MCP** (automatizovaný prehliadač), NIE cez YouTube API:
+
+```
+1. Naviguj na YouTube Studio brand kanála:
+   https://studio.youtube.com/channel/UCwclmlniUJeq5on7s8tEKBQ
+2. Klikni "Upload videos" → "Select files" → použi file_upload (video/rozpravka.mp4)
+3. Počkaj na dokončenie nahrávania
+4. Vyplň Details tab:
+   - Title (názov videa)
+   - Description (popis videa s časovými značkami)
+   - Made for kids = Yes
+   - Thumbnail (nahraj thumbnail obrázok)
+5. Klikni "Show more" → vyplň:
+   - Tags (tagy)
+   - Language = Slovak
+6. Next → Video elements (preskočiť) → Next → Initial check → Next
+7. Visibility → Public → Publish
+8. Zatvor dialóg publikácie
+```
 
 ### Názov videa
 
@@ -170,7 +188,6 @@ Poučné Slovenské Rozprávky — originálne slovenské rozprávky pre malých
 👍 Dajte like, ak sa vám rozprávka páčila!
 
 🌐 Blog: [URL]
-🎧 Spotify: [URL]
 
 ---
 
@@ -191,6 +208,29 @@ rozprávka pred spaním, detské rozprávky, rozprávky na počúvanie,
 [názov rozprávky], [téma], [morál kľúčové slovo],
 fairy tales, slovak fairy tales, bedtime stories for kids,
 stories for children, educational stories
+```
+
+### Časové značky (Timestamps)
+
+Časové značky sa generujú z `assembly-plan.json` (plán zostrihania videa):
+
+- Súbor `assembly-plan.json` obsahuje presné začiatočné časy (`start_seconds`) pre každý segment
+- Sekundy sa prevedú na formát **MM:SS** (napr. 95 sekúnd → `1:35`)
+- Časové značky sa vložia do YouTube popisu ako klikateľné kapitoly
+
+**Príklad generovania**:
+
+```
+assembly-plan.json segment:
+  { "label": "Úvod", "start_seconds": 0 }
+  { "label": "Stretnutie s líškou", "start_seconds": 95 }
+  { "label": "Ponaučenie", "start_seconds": 420 }
+
+→ YouTube popis:
+  ⏰ Časové značky:
+  0:00 — Úvod
+  1:35 — Stretnutie s líškou
+  7:00 — Ponaučenie
 ```
 
 ### Kategória a nastavenia
@@ -239,19 +279,20 @@ stories for children, educational stories
 
 ### Kontrolný zoznam konzistencie
 
-- [ ] Názov rozprávky je **identický** na všetkých platformách
+- [ ] Názov rozprávky je **presne identický** na všetkých platformách (blog, YouTube)
+- [ ] Morálne ponaučenie (text) je **zhodné** na všetkých platformách
 - [ ] Dĺžka v minútach je **rovnaká** všade
-- [ ] Morálne ponaučenie je **rovnaké** (formulácia môže byť mierne odlišná)
 - [ ] Tagy/kľúčové slová sa **prekrývajú** medzi platformami
 - [ ] Obálka/thumbnail je **konzistentná** vizuálne
-- [ ] Odkazy medzi platformami sú **správne a funkčné**
+- [ ] Odkazy medzi platformami sú **správne a funkčné** (po dokončení všetkých publikácií)
 
-### Poradie publikácie
+### Poradie publikácie (overený postup)
 
-1. **Blog** — publikuj text a obrázky
-2. **YouTube** — nahraj video, nastav metadáta, pridaj link na blog
-3. **Spotify** — nahraj audio epizódu, pridaj linky na blog a YouTube
-4. **Aktualizuj blog** — pridaj linky na YouTube a Spotify
+1. **Blog (GitHub Pages)** — commit blog post + optimalizované obrázky do `docs/`, push → GitHub Pages auto-deploy
+2. **YouTube** — nahraj video cez YouTube Studio brand kanála (Playwright MCP workflow)
+3. **Aktualizuj blog** — pridaj YouTube URL do blog postu, commit + push
+4. **Aktualizuj `katalog.json`** — pridaj všetky URL, commit + push
+5. **Finálny commit + push** — overenie, že všetky zmeny sú v repozitári
 
 ## 7. Aktualizácia katalógu
 
@@ -274,9 +315,8 @@ Po úspešnej publikácii na všetkých platformách aktualizuj `katalog.json`:
     {"name": "Janko", "role": "Hrdina"}
   ],
   "urls": {
-    "blog": "[URL]",
-    "youtube": "[URL]",
-    "spotify": "[URL]"
+    "blog": "https://petermilovcik.github.io/PoucneSlovenskeRozpravky/rozpravky/[slug]",
+    "youtube": "https://www.youtube.com/watch?v=[VIDEO_ID]"
   }
 }
 ```
@@ -300,22 +340,43 @@ rozpravky/[id-rozpravky]/
 │   └── thumbnail.png
 ├── video/
 │   ├── rozpravka.mp4
-│   ├── assembly-plan.md
+│   ├── assembly-plan.json
 │   └── metadata.json
 └── publish/
     ├── blog-post.md
     ├── youtube-metadata.json
-    ├── spotify-metadata.json
+    ├── youtube-result.json
     └── publish-log.md
+
+docs/
+├── _rozpravky/
+│   └── [slug].md              # Blog post (Jekyll)
+└── images/
+    └── [slug]/
+        ├── cover.jpg          # Optimalizovaná obálka
+        ├── scene-01.jpg       # Optimalizované scény
+        └── ...
 ```
+
+### Publikačné súbory
+
+| Súbor | Účel |
+|-------|------|
+| `publish/youtube-metadata.json` | Názov, popis, tagy, časové značky pre YouTube |
+| `publish/youtube-result.json` | Video ID, URL videa, dátum nahratia |
+| `publish/blog-post.md` | Kópia blog postu |
+| `publish/publish-log.md` | Chronologický záznam publikácie |
 
 ## 9. Kontrolný zoznam publikácie
 
-- [ ] Blog post je naformátovaný a obsahuje všetky metadáta
-- [ ] Blog post obsahuje ilustrácie s alt textom
-- [ ] Spotify epizóda má kompletný popis a metadáta
-- [ ] YouTube video má názov, popis, tagy a časové značky
+- [ ] Blog post je naformátovaný, obsahuje všetky metadáta a je v `docs/_rozpravky/`
+- [ ] Obrázky pre blog sú optimalizované JPG v `docs/images/[slug]/`
+- [ ] Blog post obsahuje ilustrácie s alt textom v slovenčine
+- [ ] YouTube video má názov, popis, tagy a časové značky z `assembly-plan.json`
+- [ ] YouTube nahrávanie prebehlo cez YouTube Studio brand kanála (Playwright MCP)
 - [ ] Thumbnail je vytvorený a spĺňa požiadavky
 - [ ] Všetky platformy majú vzájomné prepojenia (cross-links)
-- [ ] `katalog.json` je aktualizovaný so statusom `fully_published`
+- [ ] `katalog.json` je aktualizovaný so statusom `fully_published` a všetkými URL
+- [ ] `youtube-result.json` obsahuje video ID a URL
 - [ ] Publikačný log je zapísaný v `publish-log.md`
+- [ ] Finálny commit + push je vykonaný

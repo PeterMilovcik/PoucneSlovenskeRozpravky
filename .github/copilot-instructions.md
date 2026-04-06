@@ -62,6 +62,8 @@ Každá rozprávka MUSÍ dodržiavať nasledujúcu šesťčasťovú štruktúru:
 - Príklad: *„A tak sa líška naučila, že zdieľať s priateľmi je to najkrajšie, čo môžeme urobiť."*
 - Dĺžka: cca 5–10 % celkového textu
 
+> **Poznámka k ilustráciám**: Každá scéna, ktorá bude vizuálne ilustrovaná, musí byť jasne oddelená v texte. Pre video je potrebná minimálne 1 ilustrácia na každý významný textový segment (typicky 12–15 scén pre 10-minútovú rozprávku).
+
 ---
 
 ## 3. Štýl písania
@@ -165,7 +167,7 @@ Nasledujúci obsah je **PRÍSNE ZAKÁZANÝ** v akejkoľvek rozprávke:
 
 ### Rýchlosť čítania
 
-Pre detské rozprávky čítané nahlas sa počíta s rýchlosťou **130–150 slov za minútu**.
+Pre detské rozprávky čítané nahlas sa počíta s rýchlosťou **130–150 slov za minútu**. Pre TTS (ElevenLabs) počítaj s rýchlosťou ~135 slov/min.
 
 ### Predvolená dĺžka
 
@@ -198,10 +200,26 @@ rozpravky/
     ├── rozpravka.md          # Hlavný text rozprávky
     ├── outline.md            # Osnova / štruktúra príbehu
     ├── metadata.json         # Metadáta rozprávky
-    └── kapitoly/             # Iba pre rozprávky > 15 min
-        ├── 01-nazov.md
-        ├── 02-nazov.md
-        └── ...
+    ├── kapitoly/             # Iba pre rozprávky > 15 min
+    │   ├── 01-nazov.md
+    │   ├── 02-nazov.md
+    │   └── ...
+    ├── audio/
+    │   ├── rozpravka.mp3
+    │   ├── clean-text.txt    # TTS text bez páuz (pre video sync)
+    │   └── metadata.json
+    ├── images/
+    │   ├── cover-16x9.png
+    │   ├── scene-01.png ... scene-14.png
+    │   ├── preview/          # Náhľady 800px JPG
+    │   └── prompts.md
+    ├── video/
+    │   ├── rozpravka.mp4
+    │   └── assembly-plan.json
+    └── publish/
+        ├── youtube-metadata.json
+        ├── youtube-result.json
+        └── publish-log.md
 ```
 
 **Formát slug-u**: malé písmená, bez diakritiky, slová oddelené pomlčkami.
@@ -340,6 +358,13 @@ Pri generovaní každej rozprávky VŽDY dodržuj tento postup:
 6. **Kontrola kvality** — Spusti kontrolné skills (viď sekciu 10)
 7. **Vytvorenie metadát** (`metadata.json`) — Vyplň všetky polia
 8. **Finalizácia** — Aktualizuj `katalog.json`
+9. **Generovanie audia** — Príprava textu pre TTS, generovanie v ElevenLabs
+10. **Generovanie ilustrácií** — Cover + scény cez GPT Image s referenčným obrázkom
+11. **Review ilustrácií** — Vizuálna kontrola logiky, konzistencie postáv a štýlu
+12. **Zostavenie videa** — `scripts/build-video.py` pre audio-synced slideshow
+13. **Publikácia na blog** — GitHub Pages s optimalizovanými JPG obrázkami
+14. **Publikácia na YouTube** — Upload cez YouTube Studio, thumbnail, metadáta
+15. **Aktualizácia katalógu** — Finálny stav a URL vo všetkých záznamoch
 
 ### 8.2 Kontrola jedinečnosti
 
@@ -375,6 +400,19 @@ Použi **paralelné generovanie kapitol + zlúčenie**:
    - Zápletka plynulo pokračuje
 4. Zlúč kapitoly do finálneho `rozpravka.md`
 5. Spusti finálnu kontrolu kvality
+
+### 9.3 Generovanie ilustrácií
+
+Použi **GPT Image (gpt-image-1)** s referenčným obrázkom pre konzistentnosť:
+
+1. Vygeneruj **obálku** (cover) ako prvý obrázok bez referencie
+2. Vygeneruj **všetky scény** s obálkou ako referenčným obrázkom (cez `images.edit()`)
+3. Vytvor **preview náhľady** (800px JPG) pre rýchlu kontrolu
+4. **Vizuálna kontrola**: logika scén, konzistencia postáv, štýl
+5. Pregeneruj chybné obrázky
+6. Optimalizuj pre blog: PNG → JPG 1200px
+
+**Skript**: `python scripts/generate-images.py --story-dir [cesta] --all`
 
 ---
 
@@ -471,6 +509,10 @@ Celkové skóre = (Skills × 0.4) + (Pipeline × 0.2) + (Agent Review × 0.4)
 - [ ] `outline.md` existuje
 - [ ] Kontrola proti `katalog.json` prebehla
 - [ ] QA skóre ≥ 80/100
+- [ ] Ilustrácie prešli vizuálnou kontrolou (logika, konzistencia, štýl)
+- [ ] Video je synchronizované s audiom (±1s tolerancia)
+- [ ] Blog obrázky sú optimalizované (JPG, 1200px)
+- [ ] YouTube video je publikované s metadátami a thumbnailom
 
 ### Príklad promptu pre novú rozprávku
 

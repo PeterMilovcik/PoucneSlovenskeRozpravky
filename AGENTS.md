@@ -63,7 +63,7 @@ resolution: <ako sa príbeh uzavrie, ako sa morál zjaví>
 
 ### Výstup
 
-- Súbor `outline.yaml` v priečinku rozprávky (`rozpravky/<id>/outline.yaml`)
+- Súbor `outline.md` v priečinku rozprávky (`rozpravky/<id>/outline.md`)
 - Záznam o všetkých vygenerovaných nápadoch a zdôvodnenie výberu
 
 ### Kritériá kvality
@@ -122,13 +122,13 @@ resolution: <ako sa príbeh uzavrie, ako sa morál zjaví>
 
 ### Vstup
 
-- Schválený outline (`outline.yaml`)
+- Schválený outline (`outline.md`)
 - Požadovaná dĺžka v slovách (orientačne: 5 min ≈ 700 slov, 10 min ≈ 1 400 slov, 15 min ≈ 2 100 slov)
 
 ### Výstup
 
-- Súbor `text.md` v priečinku rozprávky (`rozpravky/<id>/text.md`)
-- Pri dlhších rozprávkach: jednotlivé kapitoly ako `text-kapitola-01.md`, `text-kapitola-02.md`, atď. a hlavný `text.md` s kompletným textom
+- Súbor `rozpravka.md` v priečinku rozprávky (`rozpravky/<id>/text.md`)
+- Pri dlhších rozprávkach: jednotlivé kapitoly ako `text-kapitola-01.md`, `text-kapitola-02.md`, atď. a hlavný `rozpravka.md` s kompletným textom
 
 ### Kritériá kvality
 
@@ -176,13 +176,13 @@ Pre každý nájdený problém uveď:
 
 ### Vstup
 
-- Text rozprávky (`text.md`)
+- Text rozprávky (`rozpravka.md`)
 - Voliteľne: výstup z LanguageTool (aby sa neopakovali rovnaké nálezy)
 
 ### Výstup
 
 - Správa s nálezmi: `rozpravky/<id>/review/korektor.md`
-- Opravený text (ak sú nálezy): `text.md` s aplikovanými opravami
+- Opravený text (ak sú nálezy): `rozpravka.md` s aplikovanými opravami
 - Súhrn: počet nálezov podľa závažnosti, celkové hodnotenie gramatickej úrovne
 
 ### Kritériá kvality
@@ -241,8 +241,8 @@ Na záver uveď celkové hodnotenie:
 
 ### Vstup
 
-- Text rozprávky (`text.md`)
-- Outline rozprávky (`outline.yaml`) na overenie, či text zodpovedá zámeru
+- Text rozprávky (`rozpravka.md`)
+- Outline rozprávky (`outline.md`) na overenie, či text zodpovedá zámeru
 
 ### Výstup
 
@@ -321,8 +321,8 @@ Na záver:
 
 ### Vstup
 
-- Text rozprávky (`text.md`)
-- Outline rozprávky (`outline.yaml`)
+- Text rozprávky (`rozpravka.md`)
+- Outline rozprávky (`outline.md`)
 
 ### Výstup
 
@@ -343,66 +343,95 @@ Na záver:
 
 ## 6. 🖼️ Ilustrátor (Image Generator)
 
-**Rola**: Extrahuje kľúčové vizuálne scény z textu rozprávky a pripravuje detailné vizuálne popisy (prompty) pre generovanie ilustrácií cez DALL-E 3.
+**Rola**: Extrahuje kľúčové vizuálne scény z textu rozprávky a pripravuje detailné vizuálne popisy (prompty) pre generovanie ilustrácií cez **GPT Image (gpt-image-1)**.
 
 ### Inštrukcie
 
-- **Extrahuj kľúčové vizuálne scény** z textu – vyber 5–8 momentov, ktoré najlepšie zachytávajú dej. Každá scéna musí byť vizuálne zaujímavá a zrozumiteľná aj bez textu.
-- **Pre každú scénu vytvor DALL-E prompt** v angličtine (DALL-E lepšie rozumie anglickým promptom), ale popis scény v slovenčine ponechaj na referenciu.
-- **Konzistentný vizuálny štýl** naprieč všetkými ilustráciami jednej rozprávky:
-  - Štýl: detská knižná ilustrácia, akvarelový/digitálny štýl, teplé farby
-  - Postavy: rovnaký vzhľad vo všetkých obrázkoch (farba vlasov, oblečenie, proporcie)
-  - Prostredie: konzistentné farby a atmosféra
-- **Definuj konzistentný prompt prefix** pre celú rozprávku, ktorý zabezpečí jednotný štýl.
-- **Titulný obrázok**: Prvý prompt musí byť pre titulný obrázok – zachytáva hlavnú postavu a atmosféru rozprávky.
+- **Extrahuj kľúčové vizuálne scény** z textu – vyber **12–15 momentov** pre 10-minútovú rozprávku (1 ilustrácia na každý významný textový segment). Každá scéna musí byť vizuálne zaujímavá a zrozumiteľná aj bez textu.
+- **Pre každú scénu vytvor prompt** v angličtine (model lepšie rozumie anglickým promptom), ale popis scény v slovenčine ponechaj na referenciu.
+- **Stratégia referenčného obrázka** (kľúčová pre konzistentnosť):
+  1. Vygeneruj **obálku (cover)** ako prvý obrázok cez `images.generate()` — bez referencie
+  2. Vygeneruj **všetky scény** cez `images.edit()` s obálkou ako referenčným obrázkom
+  3. Toto zabezpečí konzistentný štýl, farby a vzhľad postáv naprieč všetkými obrázkami
+- **Definuj konzistentný štýlový prefix** pre celú rozprávku — KAŽDÝ prompt musí začínať rovnakým prefixom.
+- **Definuj referenčné opisy postáv** — detailný vizuálny popis každej postavy, ktorý sa opakuje v každom prompte.
+- **Skript**: `python scripts/generate-images.py --story-dir [cesta] --all`
+
+### Odporúčaný štýlový prefix
+
+```
+Soft watercolor children's book illustration in warm storybook style.
+Gentle rounded brushstrokes, dreamy color blending, soft edges.
+Warm golden and earthy color palette with touches of green and blue.
+Characters have friendly rounded proportions with expressive eyes.
+European small-town setting. Safe, magical, inviting atmosphere for children.
+No text, no letters, no words in the image. Wide format, 16:9 aspect ratio.
+```
+
+### Počet ilustrácií podľa dĺžky
+
+| Dĺžka rozprávky | Počet scén | Celkovo (s obálkou) |
+|------------------|-----------|---------------------|
+| 5 min            | 6–8       | 7–9                 |
+| 10 min           | 10–14     | 11–15               |
+| 15 min           | 14–18     | 15–19               |
+| 20+ min          | 18–22     | 19–23               |
 
 ### Štruktúra výstupu
 
-```yaml
-stylePrefix: >
-  Children's book illustration, watercolor and digital art style,
-  warm soft colors, gentle lighting, friendly characters,
-  <špecifický štýl pre túto rozprávku>
+Súbor `images/prompts.md` v priečinku rozprávky:
 
-characterDescriptions:
-  - name: <meno postavy>
-    visualDescription: >
-      <detailný vizuálny popis: vek, výška, vlasy, oblečenie, výraz,
-       charakteristické znaky – toto sa opakuje v každom prompte>
+```markdown
+# Prompty pre ilustrácie: [Názov rozprávky]
 
-illustrations:
-  - id: 01-title
-    scene: <slovenský popis scény>
-    prompt: >
-      <kompletný DALL-E prompt v angličtine vrátane style prefixu
-       a character descriptions>
-    aspectRatio: "16:9"
-    mood: <nálada: veselá, tajomná, napínavá, pokojná>
-    textReference: <odkaz na odsek/vetu v texte, ktorú ilustrácia zachytáva>
-  # ... ďalšie ilustrácie
+## Štýlový prefix (použiť v KAŽDOM prompte)
+[identický prefix pre všetky obrázky]
+
+## Referenčné opisy postáv
+**[Meno]**: [detailný vizuálny popis: vek, vlasy, oči, oblečenie, charakteristické znaky]
+
+## Obálka (Cover)
+**Moment**: [čo scéna zachytáva]
+**Prompt**: [kompletný prompt vrátane prefixu a opisu postáv]
+
+## Scéna 1: [Názov]
+**Text**: [citácia z rozprávky, ktorú scéna ilustruje]
+**Moment**: [čo presne vidíme na obrázku]
+**Prompt**: [kompletný prompt]
 ```
+
+### Povinná vizuálna kontrola (multi-pass review)
+
+1. **Logika scén** — zodpovedá obrázok textu? Správny počet postáv, predmetov?
+2. **Konzistencia postáv** — rovnaké vlasy, oblečenie, okuliare naprieč scénami
+3. **Konzistencia štýlu** — rovnaká akvareľová technika, farebná paleta
+4. **Bezpečnosť** — žiadne desivé prvky, anatomické chyby, nevhodný obsah
+5. Pregeneruj chybné obrázky PRED pokračovaním k videu
 
 ### Vstup
 
-- Text rozprávky (`text.md`)
-- Outline rozprávky (`outline.yaml`) na pochopenie kľúčových momentov
+- Text rozprávky (`rozpravka.md`)
+- Outline rozprávky (`outline.md`) na pochopenie kľúčových momentov
 
 ### Výstup
 
-- Súbor s promptmi: `rozpravky/<id>/images/prompts.yaml`
-- Po generovaní: obrázky v `rozpravky/<id>/images/` (01-title.png, 02-scene.png, ...)
+- Súbor s promptmi: `rozpravky/<id>/images/prompts.md`
+- Obálka: `rozpravky/<id>/images/cover-16x9.png`
+- Scény: `rozpravky/<id>/images/scene-01.png` až `scene-XX.png`
+- Náhľady: `rozpravky/<id>/images/preview/*.jpg` (800px)
 
 ### Kritériá kvality
 
 | Kritérium | Požiadavka |
 |-----------|-----------|
-| Konzistentnosť | Postavy vyzerajú rovnako na všetkých obrázkoch |
-| Pokrytie deja | Ilustrácie pokrývajú celý oblúk príbehu od začiatku po koniec |
+| Konzistentnosť | Referenčný obrázok použitý pre všetky scény |
+| Pokrytie deja | Každý významný textový segment má vlastnú ilustráciu |
 | Vizuálna príťažlivosť | Obrázky sú farebné, príjemné, vhodné pre deti |
-| Titulný obrázok | Prvý obrázok funguje ako titulná ilustrácia |
-| Bez textu v obrázkoch | Prompty nesmú žiadať text v obrázkoch (DALL-E ho generuje zle) |
+| Obálka | Funguje ako titulná ilustrácia aj ako YouTube thumbnail |
+| Bez textu v obrázkoch | Prompty NIKDY nežiadajú text v obrázkoch |
 | Bezpečnosť | Žiadne strašidelné, násilné alebo nevhodné vizuálne prvky |
-| Pomer strán | 16:9 pre video, voliteľne 1:1 pre blog/podcast |
+| Pomer strán | 16:9 (1536×1024) pre video a blog |
+| Review | Povinná vizuálna kontrola pred pokračovaním k videu |
 
 ---
 
@@ -413,191 +442,148 @@ illustrations:
 ### Inštrukcie
 
 - **Príprava textu pre TTS**:
-  - Rozdeľ text na segmenty vhodné pre TTS (max 5 000 znakov na segment)
-  - Pridaj SSML značky alebo ElevenLabs-špecifické značky pre pauzy, dôraz, tempo
-  - Dlhšie pauzy medzi odsekmi (napr. `<break time="1s"/>`)
-  - Krátke pauzy pred a po priamej reči
-  - Dôraz na kľúčové slová a citoslovcia
+  - Z `rozpravka.md` odstráň YAML front matter, Markdown formátovanie, nadpisy
+  - Odstráň úvodzovky z dialógov (ElevenLabs zvládne intonáciu automaticky)
+  - Použi `"..."` (tri bodky) ako univerzálny marker pre pauzy medzi sekciami
+  - Číslovky zapíš slovom: „3" → „tri"
+  - Skratky rozpíš: „napr." → „napríklad"
+  - Výstup ulož ako `audio/clean-text.txt`
 - **Výber a konfigurácia hlasu**:
-  - Primárny hlas: teplý ženský hlas (babička/rozprávkárka)
+  - **Odporúčaný hlas: "George"** — testovaný, funguje výborne pre slovenčinu
+  - Teplý, čistý rozprávačský tón, dobrá slovenská výslovnosť (ž, š, č, ť, ď, ň, ľ)
+  - Model: `eleven_multilingual_v2`
   - Stabilita hlasu: 0.5–0.7 (prirodzená variabilita)
   - Similarity boost: 0.7–0.8
-  - Jazyk: slovenčina (sk-SK)
-- **Zvukové segmenty**: Rozdeľ audio na logické časti zodpovedajúce ilustráciám/scénam – toto je dôležité pre synchronizáciu s videom.
 - **Kvalitná kontrola**: Skontroluj, či TTS správne vyslovuje všetky slovenské slová, mená postáv a citoslovcia.
 
-### Štruktúra výstupu
-
-```yaml
-voiceConfig:
-  voiceId: <ElevenLabs voice ID>
-  voiceName: <názov hlasu>
-  model: "eleven_multilingual_v2"
-  language: "sk"
-  settings:
-    stability: 0.6
-    similarityBoost: 0.75
-    style: 0.4
-    useSpeakerBoost: true
-
-segments:
-  - id: "segment-01"
-    title: <názov segmentu, napr. "Úvod" alebo názov scény>
-    text: |
-      <text pre TTS vrátane značiek pre pauzy a dôraz>
-    estimatedDuration: <odhadovaná dĺžka v sekundách>
-    correspondingIllustration: "01-title"
-    notes: <poznámky pre TTS, napr. "pomalšie tempo", "tajomný tón">
-  # ... ďalšie segmenty
-
-pronunciationGuide:
-  - word: <slovenské slovo alebo meno>
-    pronunciation: <fonetický zápis alebo IPA>
-    notes: <poznámka>
-```
+> **Dôležité**: Súbor `audio/clean-text.txt` slúži dvom účelom:
+> 1. Vstup pre ElevenLabs TTS
+> 2. Zdrojový text pre `scripts/build-video.py` — skript používa text medzi pauzami na výpočet časovania segmentov vo videu
+>
+> Preto text MUSÍ presne zodpovedať zvukovej nahrávke.
 
 ### Vstup
 
-- Finálny text rozprávky (`text.md`) – po všetkých opravách
-- Zoznam ilustrácií (`images/prompts.yaml`) na synchronizáciu segmentov
+- Finálny text rozprávky (`rozpravka.md`) – po všetkých opravách
 
 ### Výstup
 
-- Konfigurácia audio: `rozpravky/<id>/audio/config.yaml`
-- TTS-pripravené segmenty: `rozpravky/<id>/audio/segments/`
-- Po generovaní: audio súbory v `rozpravky/<id>/audio/` (segment-01.mp3, ...)
-- Kompletné audio: `rozpravky/<id>/audio/full.mp3`
+- TTS-pripravený text: `rozpravky/<id>/audio/clean-text.txt`
+- Audio nahrávka: `rozpravky/<id>/audio/rozpravka.mp3` (MP3, 192kbps, 44.1kHz)
+- Metadáta: `rozpravky/<id>/audio/metadata.json`
 
 ### Kritériá kvality
 
 | Kritérium | Požiadavka |
 |-----------|-----------|
 | Výslovnosť | 100 % správna slovenská výslovnosť |
-| Pauzy | Prirodzené pauzy medzi vetami, odsekmi a scénami |
-| Tempo | Primerané pre deti – ani príliš rýchle, ani príliš pomalé |
-| Segmentácia | Segmenty zodpovedajú scénam/ilustráciám pre video |
+| Pauzy | Prirodzené pauzy — `"..."` v texte generuje pauzy medzi sekciami |
+| Tempo | ~135 slov/min — primerané pre deti |
 | Celková dĺžka | Zodpovedá cieľovej dĺžke rozprávky (±10 %) |
 | Kvalita zvuku | Čistý zvuk bez artefaktov, šumu alebo prerušení |
+| Konzistencia | `clean-text.txt` presne zodpovedá obsahu `rozpravka.mp3` |
 
 ---
 
 ## 8. 🎬 Strihač (Video Producer)
 
-**Rola**: Riadi video pipeline – plánuje slideshow sekvenciu (ktorý obrázok ku ktorému audio segmentu), prechody, titulky a záverečné karty.
+**Rola**: Riadi video pipeline — zostavuje slideshow video z ilustrácií a audio nahrávky pomocou automatizovaného skriptu `scripts/build-video.py`.
 
 ### Inštrukcie
 
-- **Plánuj slideshow sekvenciu**: Priradí každý audio segment k zodpovedajúcej ilustrácii. Jeden obrázok môže byť zobrazený počas viacerých segmentov, ak je to vhodné.
-- **Ken Burns efekt**: Pre každý obrázok definuj pomalý zoom alebo pan (aby statický obrázok pôsobil dynamicky).
-- **Prechody**: Jemné prechody medzi obrázkami – crossfade (0.5–1 s). Žiadne agresívne efekty.
-- **Titulná karta**:
-  - Názov rozprávky
-  - Podtitulok (ak existuje)
-  - Ilustrácia na pozadí (titulný obrázok)
-  - Trvanie: 5 sekúnd
-- **Záverečná karta**:
-  - „Koniec" alebo „A bolo po rozprávke."
-  - Morál/ponaučenie (krátka veta)
-  - Výzva na odber/sledovanie
-  - Logo/názov kanálu
-  - Trvanie: 8–10 sekúnd
-- **Titulky (subtitles)**: Vygeneruj SRT súbor so slovenským titulkami synchronizovanými s audiom.
-- **Výstupný formát**: MP4, 1920×1080 (Full HD), 30 fps.
+- **Použi vždy `scripts/build-video.py`** — žiadne manuálne FFmpeg príkazy.
+  - `python scripts/build-video.py --story-dir [cesta] --plan-only` — náhľad časovania
+  - `python scripts/build-video.py --story-dir [cesta]` — kompletné video
+- **Mapovanie obrázkov na audio**: Skript automaticky:
+  - Načíta `audio/clean-text.txt` a rozdelí na segmenty podľa `"..."` páuz
+  - Spočíta slová v každom segmente
+  - Pridelí čas proporcionálne podľa počtu slov
+  - Vytvorí `video/assembly-plan.json` s presným časovaním
+- **Obálka slúži ako titulná aj záverečná karta** — `cover-16x9.png` sa použije pre úvodnú aj záverečnú sekciu. Nie je potrebné generovať separátne karty.
+- **Prechody**: Jemné fade-in/fade-out (0.8s) medzi obrázkami. Žiadne agresívne efekty.
+- **Výstupný formát**: MP4, 1920×1080, H.264, CRF 18, 30 fps, AAC 192kbps.
 
-### Štruktúra výstupu
+### ⚠️ Kritická poznámka — časovanie
 
-```yaml
-videoConfig:
-  resolution: "1920x1080"
-  fps: 30
-  format: "mp4"
-  codec: "h264"
-  audioBitrate: "192k"
+> **Display duration MUSÍ zahŕňať pauzy** medzi segmentmi.
+> Ak sa počíta len hovorený čas bez páuz, video bude kratšie ako audio (typicky o 10-15 sekúnd).
+> Správny výpočet: `display_dur = next_segment.start - current_segment.start`
+> **NIKDY nepoužívaj `-shortest` flag** — môže orezať audio.
 
-titleCard:
-  text: <názov rozprávky>
-  subtitle: <podtitulok>
-  backgroundImage: "01-title.png"
-  duration: 5
-  animation: "fade-in"
+### Povinná verifikácia
 
-sequence:
-  - id: "scene-01"
-    illustration: "01-title.png"
-    audioSegment: "segment-01"
-    duration: <dĺžka v sekundách>
-    kenBurns:
-      type: "zoom-in"       # zoom-in, zoom-out, pan-left, pan-right
-      startScale: 1.0
-      endScale: 1.15
-    transition: "crossfade"
-    transitionDuration: 0.8
-  # ... ďalšie scény
-
-endCard:
-  text: "Koniec"
-  moral: <krátke ponaučenie>
-  callToAction: "Sledujte nás pre ďalšie rozprávky!"
-  duration: 10
-  animation: "fade-in"
-
-subtitles:
-  format: "srt"
-  language: "sk"
-  file: "subtitles.srt"
-```
+Po zostavení videa VŽDY skontroluj:
+- `video_duration ≈ audio_duration ± 1 sekunda`
+- Ak je rozdiel väčší, existuje chyba v časovaní
 
 ### Vstup
 
-- Audio segmenty a konfigurácia (`audio/config.yaml`, `audio/segments/`)
-- Ilustrácie (`images/`)
-- Metadata rozprávky (outline, titulok, morál)
+- Audio nahrávka: `audio/rozpravka.mp3`
+- TTS text: `audio/clean-text.txt`
+- Ilustrácie: `images/cover-16x9.png`, `images/scene-01.png` ... `scene-XX.png`
 
 ### Výstup
 
-- Video konfigurácia: `rozpravky/<id>/video/config.yaml`
-- FFmpeg script: `rozpravky/<id>/video/render.sh`
-- Titulky: `rozpravky/<id>/video/subtitles.srt`
-- Po renderovaní: `rozpravky/<id>/video/final.mp4`
+- Plán zostrihania: `rozpravky/<id>/video/assembly-plan.json`
+- Finálne video: `rozpravky/<id>/video/rozpravka.mp4`
 
 ### Kritériá kvality
 
 | Kritérium | Požiadavka |
 |-----------|-----------|
-| Synchronizácia | Obrázky presne zodpovedajú obsahu audio segmentu |
-| Prechody | Plynulé, jemné – žiadne rušivé efekty |
-| Titulná karta | Profesionálna, príťažlivá, s názvom rozprávky |
-| Záverečná karta | Obsahuje morál a výzvu na odber |
-| Titulky | 100 % synchronizované s audiom, bez preklepov |
+| Synchronizácia | Obrázky presne zodpovedajú obsahu audio (±1s tolerancia) |
+| Prechody | Plynulé fade-in/fade-out, 0.8s |
+| Obálka | Použitá ako titulná aj záverečná karta |
 | Rozlíšenie | Full HD (1920×1080) |
-| Ken Burns | Jemný, prirodzený pohyb – nesmie rušiť |
+| Dĺžka | Video trvanie = audio trvanie ± 1s |
+| YouTube-ready | H.264, movflags +faststart, yuv420p |
 
 ---
 
 ## 9. 📢 Vydavateľ (Publisher)
 
-**Rola**: Riadi publikáciu rozprávky na všetkých platformách – blog, Spotify (podcast), YouTube. Pripravuje metadata, popisy, tagy a všetko potrebné pre zverejnenie.
+**Rola**: Riadi publikáciu rozprávky na všetkých platformách – GitHub Pages blog a YouTube. Pripravuje metadata, popisy, tagy a všetko potrebné pre zverejnenie.
 
 ### Inštrukcie
 
 - **Priprav metadata** pre každú platformu v správnom formáte.
-- **Blog/Web**:
-  - Titulok a podtitulok
-  - SEO popis (meta description, max 160 znakov)
-  - Kľúčové slová / tagy
-  - Kategória rozprávky
-  - Krátky úvod (2–3 vety, láka na prečítanie/počúvanie)
-  - Obrázok pre náhľad (titulný obrázok)
-- **Spotify (Podcast)**:
-  - Názov epizódy
-  - Popis epizódy (max 4 000 znakov)
-  - Tagy / kľúčové slová
-  - Číslo epizódy
-  - Obrázok epizódy (1:1, min 1400×1400 px)
-- **YouTube**:
-  - Názov videa (max 100 znakov, pútavý, s emoji)
-  - Popis videa (prvých 150 znakov je najdôležitejších)
-  - Tagy (20–30 relevantných tagov)
+- **Blog (GitHub Pages)**:
+  - Platforma: Jekyll na GitHub Pages
+  - URL: `https://petermilovcik.github.io/PoucneSlovenskeRozpravky/`
+  - Blog post: `docs/_rozpravky/<slug>.md` s YAML front matter
+  - Obrázky: optimalizované JPG (1200px, quality 4) v `docs/images/<slug>/`
+  - Po commit+push sa GitHub Pages automaticky nasadí
+- **YouTube (brand kanál)**:
+  - Kanál: "Poučné Slovenské Rozprávky"
+  - Studio URL: `https://studio.youtube.com/channel/UCwclmlniUJeq5on7s8tEKBQ`
+  - **VŽDY naviguj PRIAMO na brand channel Studio URL** — nepoužívaj prepínanie účtov
+  - Upload cez YouTube Studio (Playwright MCP), nie cez API
+  - Made for Kids: ÁNO (COPPA)
+  - Časové značky z `video/assembly-plan.json`
+  - **YouTube NEUMOŽŇUJE nahradiť video** — pri oprave treba nahrať nové a vymazať staré
+- **Spotify**: TODO — konfigurácia bude doplnená neskôr
+- **Aktualizuj katalóg** (`katalog.json`) – pridaj novú rozprávku so všetkými metadátami a linkami.
+
+### YouTube upload workflow (Playwright MCP)
+
+```
+1. Naviguj na YouTube Studio brand channel URL
+2. Klikni "Upload videos" → "Select files" → file_upload (video/rozpravka.mp4)
+3. Počkaj na dokončenie uploadu
+4. Vyplň Details: title, description, made-for-kids=Yes, thumbnail (cover-16x9.png)
+5. Klikni "Show more" → vyplň Tags, Language=Slovak
+6. Next → Video elements (skip) → Next → Initial check → Next
+7. Visibility → Public → Publish
+8. Zatvor publish dialog
+```
+
+### Poradie publikácie (overené)
+
+1. **Blog** — commit + push na GitHub (auto-deploy)
+2. **YouTube** — upload cez YouTube Studio, thumbnail, metadáta
+3. **Aktualizuj blog** s YouTube URL
+4. **Aktualizuj katalog.json** so všetkými URL
+5. **Finálny commit** + push
   - Kategória: Education / Entertainment
   - Thumbnail: titulný obrázok s textom názvu
   - Playlist: zaradenie do správneho playlistu
@@ -699,11 +685,11 @@ catalogEntry:
 
 ```
 ┌─────────────┐
-│  Architekt   │ ──→ outline.yaml
+│  Architekt   │ ──→ outline.md
 └──────┬───────┘
        ▼
 ┌─────────────┐
-│ Rozprávkár  │ ──→ text.md
+│ Rozprávkár  │ ──→ rozpravka.md
 └──────┬───────┘
        ▼
 ┌──────────────────────────────────────┐
