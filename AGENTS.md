@@ -452,9 +452,14 @@ Súbor `images/prompts.md` v priečinku rozprávky:
 - **Výber a konfigurácia hlasu**:
   - **Odporúčaný hlas: "George"** — testovaný, funguje výborne pre slovenčinu
   - Teplý, čistý rozprávačský tón, dobrá slovenská výslovnosť (ž, š, č, ť, ď, ň, ľ)
-  - Model: `eleven_multilingual_v2`
-  - Stabilita hlasu: 0.5–0.7 (prirodzená variabilita)
+  - Model: `eleven_multilingual_v2` (pre ≤10 min), `eleven_v3` (pre ≤5 min s emočnými tagmi)
+  - Stabilita hlasu: 0.5–0.65 (Natural — vyrovnaný)
   - Similarity boost: 0.7–0.8
+- **Povinné API parametre**:
+  - `language_code: "sk"` — vynúti správnu text normalizáciu
+  - `output_format: "mp3_44100_192"` — najvyššia kvalita
+  - `speed: 0.85–0.95` — pomalšie pre detského poslucháča
+- **Chunking** (pre dlhšie rozprávky): Ak text presahuje 9,000 znakov, rozdeľ na chunky na `"..."` hraniciach a použi `previous_request_ids` pre plynulé spájanie.
 - **Kvalitná kontrola**: Skontroluj, či TTS správne vyslovuje všetky slovenské slová, mená postáv a citoslovcia.
 
 > **Dôležité**: Súbor `audio/clean-text.txt` slúži dvom účelom:
