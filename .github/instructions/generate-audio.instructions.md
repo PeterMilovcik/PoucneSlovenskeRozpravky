@@ -28,24 +28,29 @@ Dialógy vyžadujú špeciálnu prípravu:
 PÔVODNE:
 „Kam ideš, malý zajačik?" spýtala sa líška sladkým hlasom.
 
-PRE TTS:
-[pauza] Kam ideš, malý zajačik? [pauza] spýtala sa líška sladkým hlasom.
+PRE TTS (clean-text.txt):
+Kam ideš, malý zajačik? spýtala sa líška sladkým hlasom.
 ```
 
 - Odstráň úvodzovky „ a "
-- Pred a za dialógom pridaj značku pauzy `[pauza]`
+- ElevenLabs automaticky spracuje intonáciu dialógov
 - Pomenovacia veta zostáva (TTS ju prečíta ako rozprávač)
 
-### 2.3 Značky pre pauzy a intonáciu
+### 2.3 Značky pre pauzy
 
-Pridaj do textu nasledovné značky:
+Používame `"..."` (tri bodky) ako univerzálnu značku pauzy v `clean-text.txt`:
 
-| Značka | Kedy použiť | Dĺžka pauzy |
-|--------|-------------|--------------|
-| `[krátka pauza]` | Medzi vetami v rámci odseku | 0,3 s |
-| `[pauza]` | Medzi odsekmi, pred/za dialógom | 0,8 s |
-| `[dlhá pauza]` | Medzi scénami/kapitolami | 1,5 s |
-| `[veľmi dlhá pauza]` | Na začiatku a konci rozprávky | 2,5 s |
+- ElevenLabs prirodzene spracuje `"..."` ako pauzu v reči
+- Skript `scripts/build-video.py` používa text medzi pauzami na výpočet časovania segmentov vo videu
+- Pauzy umiestňuj medzi scénami, pred/za ponaučením a na začiatku/konci rozprávky
+
+```
+... Kde bolo, tam bolo, za siedmimi horami žil malý zajačik menom Ušiak. ...
+
+Ušiak mal najväčšie uši zo všetkých zajacov v lese.
+
+... Jedného dňa sa Ušiak rozhodol, že sa vydá na cestu. ...
+```
 
 ### 2.4 Špeciálne prípady
 
@@ -53,15 +58,30 @@ Pridaj do textu nasledovné značky:
 - **Skratky** — rozpiš: „napr." → „napríklad"
 - **Zvukomalebné slová** — ponechaj, TTS ich zvládne: „bác!", „šušššš"
 - **Opakovacie motívy** — ponechaj opakovanie, dodáva rytmus
-- **Ponaučenie** — pridaj `[dlhá pauza]` pred sekciu Ponaučenie
+- **Ponaučenie** — pridaj `...` pred sekciu Ponaučenie
 
 ### 2.5 Výstupný súbor
 
-Upravený text ulož ako `audio-text.txt` v adresári rozprávky:
+Upravený text ulož ako `clean-text.txt` v podadresári `audio/`:
 
 ```
-rozpravky/[id-rozpravky]/audio-text.txt
+rozpravky/[id-rozpravky]/audio/clean-text.txt
 ```
+
+### 2.6 Formát súboru `clean-text.txt`
+
+- Žiadny YAML front matter
+- Žiadne Markdown formátovanie (žiadne `#`, `**`, `*`, `---`)
+- Úvodzovky dialógov odstránené (ElevenLabs spracuje intonáciu)
+- `"..."` použité ako pauzy medzi sekciami
+- Číslovky zapísané slovom: „3" → „tri"
+- Skratky rozpísané: „napr." → „napríklad"
+
+> **Dôležité**: Súbor `clean-text.txt` slúži dvom účelom:
+> 1. Vstup pre ElevenLabs TTS
+> 2. Zdrojový text pre `scripts/build-video.py` — skript používa text medzi pauzami na výpočet časovania segmentov vo videu
+>
+> Preto je dôležité, aby text presne zodpovedal zvukovej nahrávke.
 
 ## 3. ElevenLabs — výber hlasu
 
@@ -82,7 +102,18 @@ rozpravky/[id-rozpravky]/audio-text.txt
 | **Style** | 0,30–0,50 | Mierne štylistické úpravy |
 | **Speaker Boost** | zapnuté | Zlepšuje kvalitu hlasu |
 
-### Výber konkrétneho hlasu
+### Odporúčaný hlas
+
+**„George"** — otestovaný a odporúčaný ako predvolený hlas:
+
+- Teplý, jasný rozprávačský tón
+- Dobrá slovenská výslovnosť vrátane ž, š, č, ť, ď, ň, ľ, dz, dž
+- Prirodzene znie pre detského poslucháča
+- Zvláda emócie a striedanie tempa
+
+### Výber alternatívneho hlasu
+
+Ak je potrebný iný hlas:
 
 1. Vyber hlas, ktorý podporuje slovenčinu alebo slovanské jazyky
 2. Otestuj krátku ukážku (prvý odsek rozprávky)
@@ -117,11 +148,10 @@ rozpravky/[id-rozpravky]/audio-text.txt
 rozpravky/[id-rozpravky]/
 ├── outline.md
 ├── rozpravka.md
-├── audio-text.txt          # Pripravený text pre TTS
 ├── audio/
-│   ├── rozpravka.mp3       # Finálna audio nahrávka
-│   ├── rozpravka-raw.mp3   # Surová nahrávka z TTS (pred úpravami)
-│   └── metadata.json       # Metadáta audio súboru
+│   ├── rozpravka.mp3       # Finálna audio nahrávka (MP3, 192kbps, 44.1kHz)
+│   ├── clean-text.txt      # Čistý text pre TTS (bez markdownu, s "..." pauzami)
+│   └── metadata.json       # Metadáta audio súboru (hlas, trvanie, nastavenia)
 ```
 
 ### metadata.json
@@ -147,8 +177,8 @@ rozpravky/[id-rozpravky]/
 
 ### Konvencie pomenovania
 
-- Hlavný audio súbor: `rozpravka.mp3`
-- Surový výstup z TTS: `rozpravka-raw.mp3`
+- Hlavný audio súbor: `rozpravka.mp3` (priamy výstup z ElevenLabs)
+- Čistý text pre TTS: `clean-text.txt`
 - Ak je rozprávka rozdelená na časti: `rozpravka-01.mp3`, `rozpravka-02.mp3`, ...
 - Všetky audio súbory sú vo formáte **MP3, 192 kbps, 44.1 kHz**
 
@@ -163,11 +193,11 @@ Ak je k dispozícii FFmpeg, vykonaj nasledovné úpravy:
 ## 7. Kontrolný zoznam
 
 - [ ] Text je očistený od Markdown formátovania
-- [ ] Dialógy sú správne spracované (úvodzovky odstránené, pauzy pridané)
-- [ ] Značky páuz sú na správnych miestach
+- [ ] Dialógy sú správne spracované (úvodzovky odstránené)
+- [ ] Pauzy `"..."` sú na správnych miestach
 - [ ] Číslovky a skratky sú rozpísané
-- [ ] `audio-text.txt` je uložený v adresári rozprávky
-- [ ] Hlas je vybraný a otestovaný na slovenskú výslovnosť
+- [ ] `audio/clean-text.txt` je uložený v audio podadresári
+- [ ] Hlas je vybraný a otestovaný na slovenskú výslovnosť (predvolený: George)
 - [ ] ElevenLabs parametre sú nastavené podľa odporúčaní
 - [ ] Audio súbor je uložený ako `rozpravka.mp3`
 - [ ] `metadata.json` je vyplnený
