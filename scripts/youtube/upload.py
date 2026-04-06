@@ -31,7 +31,7 @@ except ImportError:
     print("Chýbajú závislosti. Spusti: pip install google-auth-oauthlib google-api-python-client")
     sys.exit(1)
 
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+SCOPES = ["https://www.googleapis.com/auth/youtube"]
 SCRIPT_DIR = Path(__file__).parent
 CLIENT_SECRET = SCRIPT_DIR / "client_secret.json"
 TOKEN_FILE = SCRIPT_DIR / "token.json"
@@ -74,7 +74,7 @@ def upload_video(youtube, video_path: str, metadata: dict):
             "defaultAudioLanguage": metadata.get("language", "sk"),
         },
         "status": {
-            "privacyStatus": metadata.get("visibility", "private"),
+            "privacyStatus": metadata.get("privacy_status", metadata.get("visibility", "private")),
             "madeForKids": metadata.get("made_for_kids", True),
             "selfDeclaredMadeForKids": metadata.get("made_for_kids", True),
         },
