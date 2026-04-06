@@ -24,11 +24,15 @@ V ten piatkový deň oslavoval spolužiak Adam narodeniny priamo na školskom dv
 
 Deti stáli dookola s otvorenými ústami. Z reproduktoru hrala veselá hudba a vo vzduchu sa niesla vôňa čerstvých muffinov. „To je úžasné!" volali jeden cez druhého.
 
+![Deti na školskom dvore obdivujú Adamove darčeky, Tomáš pozerá závistlivo]({{ '/assets/images/tomasova-zlata-minca/scene-02.jpg' | relative_url }})
+
 Kubko sa otočil k Tomášovi a usmial sa. „Naše bicykle sú ale stále lepšie. Pamätáš, ako sme na nich objavili tajnú cestu pri potoku?"
 
 Tomáš len mávol rukou. „To je starý krám, Kubko."
 
 Kubko stíchol. Na chvíľu sa mu v očiach za hrubými okuliarmi mihol smútok. Ale nič nepovedal.
+
+![Kubko sa snaží rozveseliť Tomáša, ale ten ho odmieta]({{ '/assets/images/tomasova-zlata-minca/scene-03.jpg' | relative_url }})
 
 ---
 
@@ -38,13 +42,15 @@ Na druhý deň šiel Tomáš k starému otcovi na kopec nad mestečkom. Dedkov d
 
 „Len choď, chlapče," usmial sa starý otec a pokračoval vo vyrezávaní.
 
+![Tomáš prichádza k útulnému dedkovmu domu na kopci]({{ '/assets/images/tomasova-zlata-minca/scene-04.jpg' | relative_url }})
+
 Na povale bolo prašno a tajomno. Svetlo prenikalo cez malý vikier a kreslilo zlaté pruhy na staré truhlice, zaprášené knihy a zabudnuté veci.
 
 A vtedy ju zbadal.
 
-![Tomáš otvára drevenú krabičku na prašnej povale, zlatá minca žiari]({{ '/assets/images/tomasova-zlata-minca/scene-02.jpg' | relative_url }})
-
 Malá drevená krabička s divným ornamentom – vyzerala, akoby prišla z dávnych čias. Tomáš ju otvoril. Vnútri, na zamatovom vankúšiku, ležala zlatá minca. Na jednej strane mala vyrazený obrázok ruky. Na druhej slovo, ktorému nerozumel.
+
+![Tomáš otvára drevenú krabičku na prašnej povale, zlatá minca žiari]({{ '/assets/images/tomasova-zlata-minca/scene-05.jpg' | relative_url }})
 
 Keď ju zdvihol, počul tichý, zvonivý hlas.
 
@@ -54,11 +60,15 @@ Tomášovi zabúchalo srdce. „Naozaj?"
 
 „Naozaj," zašepkala minca. „Stačí ma držať a povedať, čo chceš."
 
+![Tomáš drží žiariacu mincu v dlaniach, začarovaný jej hlasom]({{ '/assets/images/tomasova-zlata-minca/scene-06.jpg' | relative_url }})
+
 ---
 
 Tomáš nečakal ani deň. Vyšiel pred dom, postavil sa k svojmu zelenému bicyklu a šepol: „Chcem najnovší, najrýchlejší bicykel na svete!"
 
 Záblesk! Starý zelený bicykel zmizol. Na jeho mieste stál žiarivý stroj – karbónový rám, lesklé kolesá, hrubé pneumatiky a na riadidlách blikal digitálny displej.
+
+![Magický záblesk premieňa starý bicykel na nový lesklý]({{ '/assets/images/tomasova-zlata-minca/scene-07.jpg' | relative_url }})
 
 „Jupí!" vykríkol Tomáš a vyskočil na sedadlo.
 
@@ -66,11 +76,11 @@ Práve vtedy prišiel Kubko na svojom malom červenom bicykli. „Ideme na tajn�
 
 „Jasné!" zavolal Tomáš a vyrazil vpred. Nový bicykel letel ako vietor. Ale keď prišli k úzkej pasáži medzi dvoma starými dubmi, Tomáš zabrzdil.
 
-![Tomáš stojí zaseknutý medzi dubmi, Kubko ho volá z druhej strany]({{ '/assets/images/tomasova-zlata-minca/scene-03.jpg' | relative_url }})
-
 Bicykel bol príliš veľký. Široké riadidlá sa nezmestili medzi kmene. Tomáš tlačil a ťahal, ale nový lesklý bicykel sa cez úzku medzeru jednoducho nezmestil.
 
 Kubko na svojom malom bicykli prešiel ľahučko. „Poď za mnou, Tomáš! Je tu nádherné – kačica má malé káčatká!"
+
+![Tomáš stojí zaseknutý medzi dubmi, Kubko ho volá z druhej strany]({{ '/assets/images/tomasova-zlata-minca/scene-08.jpg' | relative_url }})
 
 Tomáš stál a nemohol sa pohnúť. Prvýkrát pocítil čudný pocit v hrudi – niečo ako keď sa vám zdá, že ste niečo zabudli, ale neviete, čo.
 
@@ -84,17 +94,19 @@ Večer doma sa Tomáš pozrel na svoju izbu. Hračky na poličkách sa mu zdali 
 
 Žiarivý záblesk zaplnil izbu od podlahy po strop. Keď Tomáš otvoril oči, neveril im. Police praskali pod ťarchou trblietavých krabíc. Elektronické stavebnice, robotické autíčka, obrovský dron, stavebnica vesmírnej stanice!
 
+![Tomášova izba preplnená farebnými darčekovými krabicami]({{ '/assets/images/tomasova-zlata-minca/scene-09.jpg' | relative_url }})
+
 Tomáš sa vrhol k poličkám. Otváral krabicu za krabicou. Všetko bolo nové, lesklé, dokonalé.
 
 Ale potom sa zastavil.
-
-![Tomáš sedí v izbe plnej nových hračiek, smúti za dreveným rytierom]({{ '/assets/images/tomasova-zlata-minca/scene-04.jpg' | relative_url }})
 
 Na mieste, kde vždy stával jeho drevený rytier, teraz stál plastový robot s červenými svetlami. Tomáš ho zdvihol. Bol studený a ťažký. Nemal tú malú ryhu na boku, ktorú Tomáš vždy hladkal prstami, keď nemohol zaspať. Nemal ten jemný zápach lipového dreva – ten, čo voňal ako dedkov dom.
 
 Tomáš odložil robota.
 
 Po prvýkrát sa v jeho izbe plnej najnovších hračiek rozhostilo ticho. A to ticho bolo prázdne.
+
+![Tomáš drží plastového robota a smutne pozerá na prázdne miesto po drevenom rytierovi]({{ '/assets/images/tomasova-zlata-minca/scene-10.jpg' | relative_url }})
 
 ---
 
@@ -108,11 +120,13 @@ Ocko priniesol tortu. Ale nebola to jeho čokoládová torta – tá, čo vždy 
 
 Prišli kamaráti. Pozerali sa dookola s veľkými očami, ale nebavili sa. Nafukovací hrad bol príliš veľký, hudba príliš hlasná. Sedeli na lavičke a nevedeli, čo robiť.
 
+![Prepychová ale prázdna oslava — deti sedia nudne na lavičke]({{ '/assets/images/tomasova-zlata-minca/scene-11.jpg' | relative_url }})
+
 A hádajte, kto vtedy prišiel? Kubko. V ruke držal malý zabalený darček. Podal ho Tomášovi ostýchavo. „Sám som ho urobil."
 
-![Tomáš drží Kubkov ručne nakreslený komiks, za ním prázdna prepychová oslava]({{ '/assets/images/tomasova-zlata-minca/scene-05.jpg' | relative_url }})
-
 Tomáš rozbalil papier. Bol to ručne nakreslený komiks – príbeh dvoch chlapcov na bicykloch, ako objavujú tajnú cestu, stretávajú káčatká a nájdu starý poklad. Na poslednej stránke stálo: „Pre môjho najlepšieho kamaráta Tomáša."
+
+![Kubko podáva Tomášovi ručne nakreslený komiks]({{ '/assets/images/tomasova-zlata-minca/scene-12.jpg' | relative_url }})
 
 Tomáš sa pozrel na komiks. Potom na žiarivú oslavu. Potom na Kubka, ktorý stál so sklopenými očami.
 
@@ -134,13 +148,13 @@ Tomáš sa pozrel na mincu. Otočil ju. A na druhej strane – tam, kde predtým
 
 Minca sa rozlomila na dva kúsky a zhasla. Ale Tomášovi bolo teplo pri srdci.
 
+![Minca sa rozžiari teplým svetlom a rozlomí na dva kúsky]({{ '/assets/images/tomasova-zlata-minca/scene-13.jpg' | relative_url }})
+
 Zišiel dole do dielne. Starý otec sedel pri stole a vyrezával malého koníka. Usmial sa.
 
 „Tak čo, chlapče? Našiel si, čo si hľadal?"
 
 Tomáš ho objal. „Áno, dedko. Myslím, že áno."
-
-![Tomáš objíma Kubka pri jednoduchej oslave v záhrade]({{ '/assets/images/tomasova-zlata-minca/scene-06.jpg' | relative_url }})
 
 Keď pribehol domov, na poličke v izbe stál jeho drevený rytier – s ryhou na boku a vôňou lipového dreva. V záhrade voňala ockova čokoládová torta. A pri bráne stál Kubko s komiksovým darčekom v ruke.
 
@@ -149,6 +163,8 @@ Tomáš ho objal tak silno, až Kubkovi spadli okuliare.
 „Toto je najlepší darček na svete," povedal Tomáš. A myslel to úprimne.
 
 Oslava bola jednoduchá. Bez nafukovacieho hradu, bez svetelnej šou. Len ockova torta, Kubkov komiks, starý zelený bicykel oprený o plot a smiech priateľov v záhrade.
+
+![Tomáš objíma Kubka pri jednoduchej oslave v záhrade plnej smiechu]({{ '/assets/images/tomasova-zlata-minca/scene-14.jpg' | relative_url }})
 
 Tomáš si v ten večer po prvýkrát pomyslel, že je najbohatší chlapec na svete.
 
