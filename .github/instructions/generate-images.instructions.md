@@ -203,7 +203,77 @@ Ulož všetky prompty do súboru `prompts.md`:
 **Výsledok**: scene-01.png
 ```
 
-## 8. Kontrolný zoznam
+## 8. Typické DALL-E chyby a ako sa im vyhnúť
+
+DALL-E 3 má známe obmedzenia, ktoré treba zohľadniť pri tvorbe promptov. **Vždy** kontroluj vygenerované obrázky podľa tohto zoznamu a v prípade chýb pregeneruj.
+
+### 8.1 Mechanické objekty (bicykle, vozidlá, stroje)
+
+DALL-E **veľmi často** generuje bicykle s nelogickou geometriou — extra kolesá, nemožný rám, chýbajúce časti, zrastené pedále.
+
+**Pravidlá:**
+- **NIKDY** neopisuj bicykel detailne (rám, kolesá, pedále, reťaz...)
+- Ak je bicykel v scéne, drž ho **na okraji**, **čiastočne skrytý** alebo **oprený o niečo** (plot, strom, stena)
+- Namiesto celého bicykla použi formulácie ako: "a bicycle leaning against a fence, partially hidden by flowers"
+- Radšej ukazuj **postavu vedľa bicykla** než **postavu na bicykli** — jazda na bicykli je veľmi náchylná na chyby
+- Ak musíš ukázať jazdu, použi formuláciu "from behind" alebo "silhouette in the distance"
+- **Neopíšuj technické detaily** (tachometer, pneumatiky, riadidlá) — DALL-E ich pokazí
+
+### 8.2 Ruky a prsty
+
+DALL-E občas generuje ruky s nesprávnym počtom prstov alebo nemožnými pózami.
+
+**Pravidlá:**
+- Ak postava drží predmet, opíš predmet AJ ruku: "holding a small golden coin in both cupped hands"
+- Vyvaruj sa pozíciám, kde je vidieť všetkých 10 prstov zblízka
+- Uprednostni scény, kde sú ruky čiastočne skryté alebo v pohybe
+
+### 8.3 Text a nápisy
+
+DALL-E **nedokáže** generovať čitateľný text.
+
+**Pravidlá:**
+- **NIKDY** nezahrň do promptu požiadavku na text/nápis na obrázku
+- Ak príbeh spomína text (napr. na minci, v knihe), opíš objekt BEZ textu
+- Namiesto "a sign that says WELCOME" použi "a welcoming wooden sign with decorative carvings"
+
+### 8.4 Priestorová logika
+
+DALL-E niekedy umiestni objekty nelogicky — predmety levitujú, sú v nesprávnom pomere, alebo sa nachádzajú na nemožných miestach.
+
+**Pravidlá:**
+- Vždy explicitne uveď **kde sa predmet nachádza**: "on the wooden shelf", "leaning against the fence", "on the table"
+- Uveď **veľkostný vzťah** medzi objektmi: "a small wooden knight figure, about the size of a child's hand"
+- Obmedz počet objektov v jednej scéne na **3–5 hlavných prvkov**
+- Príliš veľa objektov = väčšia šanca na priestorové chyby
+
+### 8.5 Konzistencia postáv
+
+DALL-E nevie udržiavať konzistentný vzhľad postáv medzi obrázkami.
+
+**Pravidlá:**
+- V KAŽDOM prompte opakuj kompletný referenčný opis postavy
+- Použi jednoznačné, výrazné identifikačné znaky (farba vlasov, okuliare, oblečenie)
+- Vyhýbaj sa subtílnym detailom, ktoré DALL-E nedokáže reprodukovať
+- Použi MAX 2–3 postavy na scénu
+
+### 8.6 Kontrola vygenerovaných obrázkov
+
+Po vygenerovaní **VŽDY** vizuálne skontroluj:
+
+| Kontrolný bod | Čo hľadať |
+|---|---|
+| Bicykle a vozidlá | Správny počet kolies, realistický rám, logická geometria |
+| Ruky a prsty | 5 prstov na ruke, správne ohyby, nič extra |
+| Tváre | Jeden nos, dve oči, ústa, symetria |
+| Priestorové vzťahy | Predmety sú tam, kde majú byť, správne proporcie |
+| Fyzikálne zákony | Nič nelevituje, tiene zodpovedajú svetlu |
+| Konzistencia | Postava vyzerá rovnako ako v referenčnom opise |
+| Počet objektov | Správny počet postáv, zvierat, predmetov |
+
+Ak **akýkoľvek** bod zlyháva — **pregeneruj** obrázok s upraveným promptom.
+
+## 9. Kontrolný zoznam
 
 - [ ] Vybraných 4–8 kľúčových scén z textu
 - [ ] Povinné scény sú zahrnuté (úvod, kľúčový moment, záver)

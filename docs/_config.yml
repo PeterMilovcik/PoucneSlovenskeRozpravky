@@ -1,0 +1,21 @@
+title: "Poučné Slovenské Rozprávky"
+description: "Originálne slovenské rozprávky pre deti od 6 rokov. Každá rozprávka obsahuje krásne ilustrácie a jasné ponaučenie."
+baseurl: "/PoucneSlovenskeRozpravky"
+url: ""
+lang: sk
+
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+
+collections:
+  rozpravky:
+    output: true
+    permalink: /rozpravky/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "rozpravky"
+    values:
+      layout: "rozpravka"

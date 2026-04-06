@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <h1>🧸 Poučné Slovenské Rozprávky</h1>
+  <p>Originálne slovenské rozprávky pre deti od 6 rokov. Každá rozprávka obsahuje krásne ilustrácie, príjemné rozprávanie a jasné ponaučenie.</p>
+</section>
+
+<section class="story-list">
+  {% assign stories = site.rozpravky | sort: "date" | reverse %}
+  {% for story in stories %}
+  <a href="{{ story.url | relative_url }}" class="story-card">
+    {% if story.cover_image %}
+    <img src="{{ story.cover_image | relative_url }}" alt="{{ story.title }}">
+    {% endif %}
+    <div class="story-card-body">
+      <h2>{{ story.title }}</h2>
+      <div class="meta">
+        ⏱️ {{ story.cas_citania_min }} min | 👶 {{ story.vekova_skupina }} | 📖 {{ story.tema | join: ", " }}
+      </div>
+      <p class="moral">💡 {{ story.poucenie }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</section>

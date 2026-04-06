@@ -1,0 +1,57 @@
+{
+  "resolution": "1920x1080",
+  "fps": 30,
+  "duration_seconds": 507,
+  "duration_formatted": "8:27",
+  "codec_video": "H.264",
+  "codec_audio": "AAC",
+  "audio_bitrate": "192kbps",
+  "file_size_mb": 72.48,
+  "scenes_count": 8,
+  "scenes": [
+    {
+      "image": "title-card",
+      "duration_seconds": 5,
+      "description": "Titulná karta"
+    },
+    {
+      "image": "scene-01",
+      "duration_seconds": 70,
+      "description": "Tomáš a jeho izba plná hračiek"
+    },
+    {
+      "image": "scene-02",
+      "duration_seconds": 90,
+      "description": "Nájdenie zlatej mince na povale"
+    },
+    {
+      "image": "scene-03",
+      "duration_seconds": 100,
+      "description": "Všetko sa mení na zlato"
+    },
+    {
+      "image": "scene-04",
+      "duration_seconds": 80,
+      "description": "Kubko a zlatý bicykel"
+    },
+    {
+      "image": "scene-05",
+      "duration_seconds": 85,
+      "description": "Narodeniny a poučenie"
+    },
+    {
+      "image": "scene-06",
+      "duration_seconds": 77,
+      "description": "Návrat do normálu a šťastný koniec"
+    },
+    {
+      "image": "end-card",
+      "duration_seconds": 8,
+      "description": "Záverečná karta"
+    }
+  ],
+  "transition_type": "cut",
+  "crf": 18,
+  "preset": "slow",
+  "created": "2026-04-05"
+}

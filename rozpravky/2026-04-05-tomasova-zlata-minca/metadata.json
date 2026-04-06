@@ -1,0 +1,71 @@
+{
+  "nazov": "Tomášova zlatá minca",
+  "slug": "tomasova-zlata-minca",
+  "datum_vytvorenia": "2026-04-05",
+  "tema": [
+    "vďačnosť",
+    "priateľstvo"
+  ],
+  "vekova_skupina": "6+",
+  "cas_citania_min": 8,
+  "pocet_slov": 1147,
+  "poucenie": "Najcennejšie veci na svete si nekúpiš – sú to smiech priateľov, objatie ocka a drevený rytier od starého otca.",
+  "inspiracia": "Grécky mýtus o kráľovi Midasovi",
+  "postavy": [
+    {
+      "meno": "Tomáš",
+      "typ": "chlapec",
+      "rola": "hlavná postava"
+    },
+    {
+      "meno": "Starý otec Jano",
+      "typ": "starý otec",
+      "rola": "mentor"
+    },
+    {
+      "meno": "Kubko",
+      "typ": "chlapec",
+      "rola": "pomocník"
+    },
+    {
+      "meno": "Hlas mince",
+      "typ": "magický predmet",
+      "rola": "katalyzátor"
+    }
+  ],
+  "prostredie": "Slovenské mestečko pod horami",
+  "obdobie": "súčasnosť",
+  "verzia": 1,
+  "qa_skore": null,
+  "stav": "video_ready",
+  "qa_historia": [
+    {
+      "datum": "2026-04-05",
+      "typ": "languagetool",
+      "vysledok": "3 reálne chyby, ~90 falošných pozitív"
+    },
+    {
+      "datum": "2026-04-05",
+      "typ": "recenzent",
+      "vysledok": "SCHVÁLENÉ S VÝHRADAMI – text kratší o 25%"
+    },
+    {
+      "datum": "2026-04-06",
+      "typ": "korektor",
+      "vysledok": "11 nálezov opravených (5 kritických, 2 stredné, 4 nízke)"
+    },
+    {
+      "datum": "2026-04-06",
+      "typ": "stylistik",
+      "vysledok": "⭐⭐⭐⭐⭐ – 4 drobné vylepšenia zapracované"
+    }
+  ],
+  "video": {
+    "trvanie_sekund": 507,
+    "datum_vytvorenia": "2026-04-05",
+    "trvanie_formatovane": "8:27",
+    "subor": "video/rozpravka.mp4",
+    "rozlisenie": "1920x1080",
+    "velkost_mb": 72.48
+  }
+}
