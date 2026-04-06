@@ -38,14 +38,14 @@ def parse_prompts_md(prompts_path: Path) -> dict:
     result = {"cover": None, "scenes": {}}
 
     cover_match = re.search(
-        r"## Obálka.*?\*\*Prompt\*\*:\s*\n(.*?)(?=\n---|\n## Scéna|\Z)",
+        r"## Obálka.*?\*\*Prompt\*\*:\s*\n(.*?)(?=\n\*\*Výsledok\*\*|\n---|\n## Scéna|\Z)",
         text, re.DOTALL
     )
     if cover_match:
         result["cover"] = cover_match.group(1).strip()
 
     scene_pattern = re.compile(
-        r"## Scéna (\d+):.*?\*\*Prompt\*\*:\s*\n(.*?)(?=\n---|\n## Scéna|\Z)",
+        r"## Scéna (\d+):.*?\*\*Prompt\*\*:\s*\n(.*?)(?=\n\*\*Výsledok\*\*|\n---|\n## Scéna|\Z)",
         re.DOTALL
     )
     for match in scene_pattern.finditer(text):
