@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "lastUpdated": "2026-04-06",
-  "totalCount": 2,
+  "totalCount": 3,
   "stories": [
     {
       "id": "tomasova-zlata-minca",
@@ -99,3 +99,54 @@
         "youtube": "https://www.youtube.com/watch?v=vRiEZGcmQCs",
         "spotify": null
       }
+    },
+    {
+      "id": "carovana-trieda-pani-ucitelky",
+      "title": "Čarovná trieda pani učiteľky",
+      "theme": [
+        "vzdelávanie",
+        "múdrosť",
+        "zodpovednosť"
+      ],
+      "moral": "Učenie nás robí múdrymi. Kto počúva a snaží sa, tomu sa otvorí celý svet.",
+      "inspiration": "Čarovná trieda ako metafora pre silu vzdelávania",
+      "length_minutes": 10,
+      "word_count": 1451,
+      "age_group": "6+",
+      "status": "text_ready",
+      "created": "2026-04-06",
+      "published": null,
+      "tags": [
+        "vzdelávanie",
+        "škola",
+        "múdrosť",
+        "zodpovednosť",
+        "mágia",
+        "učiteľka"
+      ],
+      "characters": [
+        {
+          "name": "Ferko",
+          "role": "Hrdina"
+        },
+        {
+          "name": "Betka",
+          "role": "Pomocníčka"
+        },
+        {
+          "name": "Kubo",
+          "role": "Pomocník"
+        },
+        {
+          "name": "Pani učiteľka Marienka",
+          "role": "Mentor"
+        }
+      ],
+      "urls": {
+        "blog": null,
+        "youtube": null,
+        "spotify": null
+      }
+    }
+  ]
+}

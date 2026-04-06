@@ -1,0 +1,21 @@
+{
+  "nazov": "Čarovná trieda pani učiteľky",
+  "slug": "carovana-trieda-pani-ucitelky",
+  "datum_vytvorenia": "2026-04-06",
+  "tema": ["vzdelávanie", "múdrosť", "zodpovednosť"],
+  "vekova_skupina": "6+",
+  "cas_citania_min": 10,
+  "pocet_slov": 1451,
+  "poucenie": "Učenie nás robí múdrymi. Kto počúva a snaží sa, tomu sa otvorí celý svet.",
+  "postavy": [
+    { "meno": "Ferko", "typ": "chlapec", "rola": "hlavná postava" },
+    { "meno": "Betka", "typ": "dievčatko", "rola": "pomocníčka" },
+    { "meno": "Kubo", "typ": "chlapec", "rola": "pomocník" },
+    { "meno": "Pani učiteľka Marienka", "typ": "učiteľka", "rola": "mentor" }
+  ],
+  "prostredie": "Dedinská škola pod zelenými kopcami",
+  "obdobie": "školský rok",
+  "verzia": 2,
+  "qa_skore": null,
+  "stav": "text_ready"
+}
