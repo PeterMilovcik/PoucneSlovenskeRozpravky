@@ -60,5 +60,9 @@ project.lock.json
 TestResults/
 *.trx
 
+# YouTube OAuth credentials
+scripts/youtube/client_secret.json
+scripts/youtube/token.json
+
 # Copilot CLI session state
 .copilot/
