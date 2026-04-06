@@ -15,9 +15,9 @@
       "length_minutes": 8,
       "word_count": 1147,
       "age_group": "6+",
-      "status": "ready_to_publish",
+      "status": "youtube_published",
       "created": "2026-04-05",
-      "published": null,
+      "published": "2026-04-06",
       "tags": [
         "vďačnosť",
         "priateľstvo",
@@ -40,8 +40,8 @@
         }
       ],
       "urls": {
-        "blog": null,
-        "youtube": null,
+        "blog": "https://petermilovcik.github.io/PoucneSlovenskeRozpravky/rozpravky/tomasova-zlata-minca/",
+        "youtube": "https://www.youtube.com/watch?v=xxF1_YzEDHU",
         "spotify": null
       }
     }

@@ -4,12 +4,12 @@
 
 | Platforma | Stav | URL | Dátum |
 |-----------|------|-----|-------|
-| Blog | ⏳ Čaká na konfiguráciu | — | — |
-| YouTube | ⏳ Čaká na konfiguráciu | — | — |
-| Spotify | ⏳ Čaká na konfiguráciu | — | — |
-
-## Poznámky
-
-- Publikačné materiály pripravené (blog-post.md, youtube-metadata.json, spotify-metadata.json)
-- **Pred publikáciou vyplň `/publish-config.md`** v koreňovom adresári projektu
-- Po vyplnení konfigurácie sa URL-ky doplnia do všetkých materiálov
+| Blog (GitHub Pages) |  Publikované | https://petermilovcik.github.io/PoucneSlovenskeRozpravky/rozpravky/tomasova-zlata-minca/ | 2026-04-06 |
+| YouTube |  Čaká na OAuth setup | https://www.youtube.com/channel/UCwclmlniUJeq5on7s8tEKBQ |  |
+| Spotify |  Odložené |  |  |
+## YouTube
+- **Dátum**: 2026-04-06
+- **URL**: https://www.youtube.com/watch?v=xxF1_YzEDHU
+- **Video ID**: xxF1_YzEDHU
+- **Stav**: Publikované 
+- **Thumbnail**: Vyžaduje overenie kanálu (phone verification) 
