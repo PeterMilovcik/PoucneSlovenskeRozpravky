@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "lastUpdated": "2026-04-06",
-  "totalCount": 1,
+  "totalCount": 2,
   "stories": [
     {
       "id": "tomasova-zlata-minca",
@@ -42,6 +42,61 @@
       "urls": {
         "blog": "https://petermilovcik.github.io/PoucneSlovenskeRozpravky/rozpravky/tomasova-zlata-minca/",
         "youtube": "https://www.youtube.com/watch?v=eavaa0FDNx0",
+        "spotify": null
+      }
+    },
+    {
+      "id": "odvazny-matej-a-traja-lapajovia",
+      "title": "O odvážnom Matejovi a troch lapajoch",
+      "theme": [
+        "odvaha",
+        "pomoc slabším"
+      ],
+      "moral": "Kto má dar, má ho použiť na pomoc tým, čo to potrebujú. Skutočná sila nie je v moci, ale v ochote pomáhať.",
+      "inspiration": "Superhrdina v slovenskom rozprávkovom prevedení",
+      "length_minutes": 10,
+      "word_count": 1440,
+      "age_group": "6+",
+      "status": "text_ready",
+      "created": "2026-04-06",
+      "published": null,
+      "tags": [
+        "odvaha",
+        "pomoc",
+        "superschopnosti",
+        "lapajovia",
+        "dedina",
+        "Tatry"
+      ],
+      "characters": [
+        {
+          "name": "Matej",
+          "role": "Hrdina"
+        },
+        {
+          "name": "Babka Rozália",
+          "role": "Mentor"
+        },
+        {
+          "name": "Bartolomej",
+          "role": "Komický protivník"
+        },
+        {
+          "name": "Cyprián",
+          "role": "Komický protivník"
+        },
+        {
+          "name": "Demeter",
+          "role": "Komický protivník"
+        },
+        {
+          "name": "Starosta Kubo",
+          "role": "Vedľajšia postava"
+        }
+      ],
+      "urls": {
+        "blog": null,
+        "youtube": null,
         "spotify": null
       }
     }

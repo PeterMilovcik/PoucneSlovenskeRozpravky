@@ -1,0 +1,47 @@
+{
+  "nazov": "O odvážnom Matejovi a troch lapajoch",
+  "slug": "odvazny-matej-a-traja-lapajovia",
+  "datum_vytvorenia": "2026-04-06",
+  "tema": ["odvaha", "pomoc slabším"],
+  "vekova_skupina": "6+",
+  "cas_citania_min": 10,
+  "pocet_slov": 1440,
+  "poucenie": "Kto má dar, má ho použiť na pomoc tým, čo to potrebujú. Skutočná sila nie je v moci, ale v ochote pomáhať.",
+  "postavy": [
+    {
+      "meno": "Matej",
+      "typ": "chlapec",
+      "rola": "hlavná postava"
+    },
+    {
+      "meno": "Bartolomej",
+      "typ": "lapaj",
+      "rola": "komický protivník"
+    },
+    {
+      "meno": "Cyprián",
+      "typ": "lapaj",
+      "rola": "komický protivník"
+    },
+    {
+      "meno": "Demeter",
+      "typ": "lapaj",
+      "rola": "komický protivník"
+    },
+    {
+      "meno": "Babka Rozália",
+      "typ": "babička",
+      "rola": "mentor"
+    },
+    {
+      "meno": "Starosta Kubo",
+      "typ": "muž",
+      "rola": "vedľajšia postava"
+    }
+  ],
+  "prostredie": "Malá slovenská dedinka v údolí pod Tatrami",
+  "obdobie": "leto",
+  "verzia": 2,
+  "qa_skore": null,
+  "stav": "text_ready"
+}
