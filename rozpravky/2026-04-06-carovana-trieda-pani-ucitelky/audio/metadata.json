@@ -1,0 +1,16 @@
+{
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "voice_name": "George",
+  "format": "mp3",
+  "bitrate": "128kbps",
+  "sample_rate": 44100,
+  "created": "2026-04-06",
+  "elevenlabs_settings": {
+    "model": "eleven_multilingual_v2",
+    "language_code": "sk",
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.40,
+    "speaker_boost": true
+  }
+}

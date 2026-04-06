@@ -113,7 +113,7 @@
       "length_minutes": 10,
       "word_count": 1451,
       "age_group": "6+",
-      "status": "text_ready",
+      "status": "fully_published",
       "created": "2026-04-06",
       "published": null,
       "tags": [
@@ -143,9 +143,8 @@
         }
       ],
       "urls": {
-        "blog": null,
-        "youtube": null,
-        "spotify": null
+        "blog": "https://robinsoniho.github.io/PoucneSlovenskeRozpravky/rozpravky/carovana-trieda-pani-ucitelky/",
+        "youtube": "https://www.youtube.com/watch?v=dpRxS-0fmFY"
       }
     }
   ]

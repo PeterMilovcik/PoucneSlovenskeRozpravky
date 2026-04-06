@@ -1,0 +1,113 @@
+{
+  "total_duration": 672.728526,
+  "segments": [
+    {
+      "name": "Titulná karta",
+      "image": "cover-16x9.png",
+      "words": 8,
+      "forced_duration": 4,
+      "start": 0.0,
+      "duration": 4,
+      "end": 4.0
+    },
+    {
+      "name": "Škola zvonku",
+      "image": "scene-01.png",
+      "words": 48,
+      "forced_duration": null,
+      "start": 4.0,
+      "duration": 22.46,
+      "end": 26.46
+    },
+    {
+      "name": "Čarovná trieda",
+      "image": "scene-02.png",
+      "words": 143,
+      "forced_duration": null,
+      "start": 26.46,
+      "duration": 66.9,
+      "end": 93.36
+    },
+    {
+      "name": "Ferko vyrušuje",
+      "image": "scene-03.png",
+      "words": 130,
+      "forced_duration": null,
+      "start": 93.36,
+      "duration": 60.82,
+      "end": 154.18
+    },
+    {
+      "name": "Prvé upozornenie",
+      "image": "scene-04.png",
+      "words": 130,
+      "forced_duration": null,
+      "start": 154.18,
+      "duration": 60.82,
+      "end": 215.0
+    },
+    {
+      "name": "Druhé upozornenie",
+      "image": "scene-05.png",
+      "words": 171,
+      "forced_duration": null,
+      "start": 215.0,
+      "duration": 80.0,
+      "end": 295.0
+    },
+    {
+      "name": "Tretie upozornenie",
+      "image": "scene-06.png",
+      "words": 147,
+      "forced_duration": null,
+      "start": 295.0,
+      "duration": 68.77,
+      "end": 363.78
+    },
+    {
+      "name": "Sivá trieda",
+      "image": "scene-07.png",
+      "words": 159,
+      "forced_duration": null,
+      "start": 363.78,
+      "duration": 74.39,
+      "end": 438.16
+    },
+    {
+      "name": "Ferko sa ospravedlňuje",
+      "image": "scene-08.png",
+      "words": 125,
+      "forced_duration": null,
+      "start": 438.16,
+      "duration": 58.48,
+      "end": 496.64
+    },
+    {
+      "name": "Mágia sa vracia",
+      "image": "scene-09.png",
+      "words": 154,
+      "forced_duration": null,
+      "start": 496.64,
+      "duration": 72.05,
+      "end": 568.69
+    },
+    {
+      "name": "Trieda opäť kvitne",
+      "image": "scene-10.png",
+      "words": 216,
+      "forced_duration": null,
+      "start": 568.69,
+      "duration": 101.06,
+      "end": 669.75
+    },
+    {
+      "name": "Poučenie",
+      "image": "cover-16x9.png",
+      "words": 0,
+      "forced_duration": null,
+      "start": 669.75,
+      "duration": 2.98,
+      "end": 672.728526
+    }
+  ]
+}

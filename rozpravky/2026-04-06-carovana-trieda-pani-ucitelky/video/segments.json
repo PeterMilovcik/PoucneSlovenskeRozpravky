@@ -1,0 +1,77 @@
+{
+  "segments": [
+    {
+      "text_start": "Čarovná trieda pani učiteľky",
+      "text_end": "Kde bolo, tam bolo",
+      "image": "cover-16x9.png",
+      "forced_duration": 4,
+      "name": "Titulná karta"
+    },
+    {
+      "text_start": "Kde bolo, tam bolo",
+      "text_end": "No tá škola mala tajomstvo",
+      "image": "scene-01.png",
+      "name": "Škola zvonku"
+    },
+    {
+      "text_start": "V triede pani učiteľky Marienky sa diala mágia",
+      "text_end": "A viete, čo sa stalo potom",
+      "image": "scene-02.png",
+      "name": "Čarovná trieda"
+    },
+    {
+      "text_start": "V triede sedel ryšavý chlapček",
+      "text_end": "Pani učiteľka Marienka stála pri tabuli",
+      "image": "scene-03.png",
+      "name": "Ferko vyrušuje"
+    },
+    {
+      "text_start": "Pani učiteľka Marienka stála pri tabuli",
+      "text_end": "Na ďalší deň pani učiteľka otvorila",
+      "image": "scene-04.png",
+      "name": "Prvé upozornenie"
+    },
+    {
+      "text_start": "Na ďalší deň pani učiteľka otvorila",
+      "text_end": "Nasledujúce ráno učiteľka začala hodinu",
+      "image": "scene-05.png",
+      "name": "Druhé upozornenie"
+    },
+    {
+      "text_start": "Nasledujúce ráno učiteľka začala hodinu",
+      "text_end": "Keď deti prišli nasledujúce ráno",
+      "image": "scene-06.png",
+      "name": "Tretie upozornenie"
+    },
+    {
+      "text_start": "Keď deti prišli nasledujúce ráno",
+      "text_end": "Ferko sa dlho díval na prázdny parapet",
+      "image": "scene-07.png",
+      "name": "Sivá trieda"
+    },
+    {
+      "text_start": "Ferko sa dlho díval na prázdny parapet",
+      "text_end": "na prázdnom parapete sa objavil maličký",
+      "image": "scene-08.png",
+      "name": "Ferko sa ospravedlňuje"
+    },
+    {
+      "text_start": "na prázdnom parapete sa objavil maličký",
+      "text_end": "Trieda opäť voňala ako lúka v lete",
+      "image": "scene-09.png",
+      "name": "Mágia sa vracia"
+    },
+    {
+      "text_start": "Do konca dňa bola trieda krajšia",
+      "text_end": "A tak sa Ferko, Betka a Kubo naučili",
+      "image": "scene-10.png",
+      "name": "Trieda opäť kvitne"
+    },
+    {
+      "text_start": "A tak sa Ferko, Betka a Kubo naučili",
+      "text_end": "",
+      "image": "cover-16x9.png",
+      "name": "Poučenie"
+    }
+  ]
+}
