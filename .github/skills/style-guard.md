@@ -4,6 +4,8 @@
 
 Kontrola dodržiavania štýlu písania rozprávok pre deti. Táto zručnosť zabezpečuje, že text spĺňa stanovené štylistické pravidlá a je vhodný pre cieľovú skupinu.
 
+> **Referenčný štýl**: Pri kontrole vždy porovnávaj text s `config/writing-style-prompt.md` — kompletný štýlový sprievodca odvodený z tradícií slovenskej rozprávkovej literatúry.
+
 ## Čo kontrolovať
 
 ### Dĺžka viet

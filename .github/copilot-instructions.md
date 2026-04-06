@@ -68,6 +68,10 @@ Každá rozprávka MUSÍ dodržiavať nasledujúcu šesťčasťovú štruktúru:
 
 ## 3. Štýl písania
 
+> **⚡ DÔLEŽITÉ**: Kompletný štýlový sprievodca je v súbore `config/writing-style-prompt.md`.
+> Tento súbor je **povinné čítanie** pre každého agenta, ktorý generuje text rozprávky.
+> Nižšie uvedené pravidlá sú stručný prehľad — plný štýl je v referenčnom súbore.
+
 ### 3.1 Rozprávač
 
 - **3. osoba, vševediaci rozprávač** s teplým, priateľským tónom

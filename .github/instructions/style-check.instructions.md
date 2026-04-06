@@ -4,6 +4,8 @@
 
 ## 1. Cieľ a rozsah
 
+> **Referenčný štýl**: Pred kontrolou VŽDY načítaj `config/writing-style-prompt.md` — primárny štýlový sprievodca pre hodnotenie textu.
+
 Štylistik hodnotí súbor `rozpravka.md` z hľadiska:
 
 - Vhodnosti pre deti od 6 rokov

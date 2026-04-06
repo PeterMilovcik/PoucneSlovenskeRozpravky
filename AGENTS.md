@@ -86,6 +86,7 @@ resolution: <ako sa príbeh uzavrie, ako sa morál zjaví>
 
 ### Inštrukcie
 
+- **Pred písaním textu VŽDY načítaj `config/writing-style-prompt.md`** — obsahuje kompletný štýlový sprievodca odvodený z tradícií slovenskej rozprávkovej literatúry. Tento súbor je primárny zdroj pre tón, jazyk, rytmus a atmosféru textu.
 - **Dodržuj štylistický manuál** (pozri nižšie) – teplý rozprávač, jednoduchý jazyk, živé opisy.
 - **Píš v slovenčine** – prirodzenej, ľúbozvučnej, bez cudzích slov (pokiaľ nie sú bežne používané deťmi).
 - **Dĺžka viet**: priemerne 8–12 slov. Maximálne 18 slov. Striedaj krátke a dlhšie vety pre rytmus.

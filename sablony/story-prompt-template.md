@@ -32,6 +32,9 @@ Napíš originálnu slovenskú rozprávku pre deti od 6 rokov.
 5. **Ponaučenie (10%)** – Jasne vyjadrené morálne ponaučenie na záver.
 
 ### Štýl písania
+
+> **Referencia**: Pred písaním textu načítaj `config/writing-style-prompt.md` — kompletný štýlový sprievodca.
+
 - Jednoduché, krátke vety (priemerne 8–12 slov, max 25 slov)
 - Slovenčina primeraná deťom od 6 rokov
 - Žiadny trpný rod – používaj činný rod
