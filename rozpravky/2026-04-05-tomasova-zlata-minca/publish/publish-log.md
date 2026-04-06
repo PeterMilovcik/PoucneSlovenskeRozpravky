@@ -9,7 +9,7 @@
 | Spotify |  Odložené |  |  |
 ## YouTube
 - **Dátum**: 2026-04-06
-- **URL**: https://www.youtube.com/watch?v=xxF1_YzEDHU
-- **Video ID**: xxF1_YzEDHU
+- **URL**: https://www.youtube.com/watch?v=eavaa0FDNx0
+- **Video ID**: eavaa0FDNx0
 - **Stav**: Publikované 
 - **Thumbnail**: Vyžaduje overenie kanálu (phone verification) 

@@ -7,7 +7,7 @@ vekova_skupina: "6+"
 cas_citania_min: 9
 poucenie: "Najcennejšie veci na svete si nekúpiš – sú to smiech priateľov, objatie ocka a drevený rytier od starého otca."
 cover_image: /assets/images/tomasova-zlata-minca/cover.jpg
-youtube_url: "https://www.youtube.com/watch?v=xxF1_YzEDHU"
+youtube_url: "https://www.youtube.com/watch?v=eavaa0FDNx0"
 ---
 
 Kde bolo, tam bolo, v jednom slovenskom mestečku pod vysokými horami žil chlapec menom Tomáš. Mal osem rokov, vlnité hnedé vlasy a modré oči, v ktorých sa vždy niečo iskrilo – niekedy radosť, niekedy nepokoj.
