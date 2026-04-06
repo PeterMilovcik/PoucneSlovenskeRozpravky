@@ -7,10 +7,13 @@ počtu slov v každom segmente textu, aby obrázky zodpovedali
 hovorenému textu.
 
 Použitie:
-    python scripts/build-video.py --story-dir rozpravky/2026-04-05-tomasova-zlata-minca
-    python scripts/build-video.py --story-dir rozpravky/2026-04-05-tomasova-zlata-minca --plan-only
+    python scripts/build-video.py --story-dir rozpravky/2026-04-06-odvazny-matej-a-traja-lapajovia
+    python scripts/build-video.py --story-dir rozpravky/2026-04-06-odvazny-matej-a-traja-lapajovia --plan-only
 
 Vyžaduje: ffmpeg, ffprobe v PATH
+
+Konfigurácia: Skript hľadá video/segments.json v adresári rozprávky.
+Ak neexistuje, automaticky generuje segmenty z audio-text.txt a images/.
 """
 
 import argparse
@@ -39,84 +42,146 @@ def count_words(text: str) -> int:
     return len(clean.split()) if clean else 0
 
 
-def calculate_timeline(text: str, total_duration: float) -> list:
-    """Vypočíta časovú os pre obrázky na základe textu."""
+def load_segments_config(story_dir: Path) -> list:
+    """Načíta konfiguráciu segmentov z video/segments.json."""
+    config_path = story_dir / "video" / "segments.json"
+    if not config_path.exists():
+        return None
+    with open(config_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data["segments"]
 
-    # Definícia segmentov: (názov, začiatok textu, koniec textu, obrázok)
-    segments = [
-        ("title",    "Tomášova zlatá minca.",    "Tomášova zlatá minca.", "cover-16x9.png"),
-        ("scene-01", "Kde bolo, tam bolo",       "staré?",                "scene-01.png"),
-        ("scene-02", "V ten piatkový deň",       "cez druhého.",          "scene-02.png"),
-        ("scene-03", "Kubko sa otočil",           "nič nepovedal.",        "scene-03.png"),
-        ("scene-04", "Na druhý deň šiel",        "vyrezávaní.",           "scene-04.png"),
-        ("scene-05", "Na povale bolo prašno",     "nerozumel.",            "scene-05.png"),
-        ("scene-06", "Keď ju zdvihol",            "čo chceš.",             "scene-06.png"),
-        ("scene-07", "Tomáš nečakal ani deň",     "sedadlo.",              "scene-07.png"),
-        ("scene-08", "Práve vtedy prišiel Kubko", "najlepší bicykel.",     "scene-08.png"),
-        ("scene-09", "Večer doma sa Tomáš",       "zastavil.",             "scene-09.png"),
-        ("scene-10", "Na mieste, kde vždy",       "to ticho bolo prázdne.", "scene-10.png"),
-        ("scene-11", "O týždeň mal Tomáš",        "čo robiť.",            "scene-11.png"),
-        ("scene-12", "A hádajte, kto vtedy",      "všetko jasne.",         "scene-12.png"),
-        ("scene-13", "Tomáš bežal.",              "teplo pri srdci.",      "scene-13.png"),
-        ("scene-14", "Zišiel dole do dielne",     "žijú šťastne dodnes.", "scene-14.png"),
-        ("moral",    "Poučenie.",                 "na svete.",             "cover-16x9.png"),
-    ]
 
-    # Spočítaj slová v každom segmente
-    word_counts = []
-    for name, start_m, end_m, img in segments:
-        si = text.find(start_m)
-        ei = text.find(end_m, si) + len(end_m)
+def auto_generate_segments(text: str, images_dir: Path) -> list:
+    """Automaticky vygeneruje segmenty z textu a dostupných obrázkov."""
+    # Nájdi dostupné scény
+    scene_files = sorted([f.name for f in images_dir.glob("scene-*.png")])
+    has_cover = (images_dir / "cover-16x9.png").exists()
+
+    # Rozdeľ text na časti podľa "..." páuz
+    chunks = re.split(r'\.\.\.\s*', text)
+    chunks = [c.strip() for c in chunks if c.strip()]
+
+    if not chunks:
+        print("❌ Žiadny text v audio-text.txt")
+        sys.exit(1)
+
+    # Rozdeľ chunks rovnomerne medzi obrázky
+    n_images = len(scene_files)
+    n_chunks = len(chunks)
+    chunks_per_image = max(1, n_chunks // n_images)
+
+    segments = []
+
+    # Titulná karta (cover)
+    if has_cover:
+        segments.append({
+            "name": "title",
+            "image": "cover-16x9.png",
+            "text_start": chunks[0][:30],
+            "text_end": chunks[0][:30],
+            "forced_duration": 4.0
+        })
+
+    # Rozdeľ chunks medzi scény
+    chunk_idx = 0
+    for i, scene_file in enumerate(scene_files):
+        start_idx = chunk_idx
+        if i < n_images - 1:
+            end_idx = min(start_idx + chunks_per_image, n_chunks - 1)
+        else:
+            end_idx = n_chunks - 1
+
+        seg_text_start = chunks[start_idx][:40] if start_idx < n_chunks else ""
+        seg_text_end = chunks[end_idx][-40:] if end_idx < n_chunks else ""
+
+        segments.append({
+            "name": scene_file.replace(".png", ""),
+            "image": scene_file,
+            "text_start": seg_text_start,
+            "text_end": seg_text_end
+        })
+        chunk_idx = end_idx + 1
+
+    return segments
+
+
+def calculate_timeline(text: str, segments: list, total_duration: float) -> list:
+    """Vypočíta časovú os pre obrázky na základe textu a konfigurácie."""
+
+    # Pre každý segment nájdi zodpovedajúci text a spočítaj slová
+    timeline = []
+    for seg in segments:
+        start_marker = seg["text_start"]
+        end_marker = seg["text_end"]
+
+        si = text.find(start_marker)
+        if si < 0:
+            print(f"  ⚠️  Segment '{seg['name']}': start marker nenájdený: '{start_marker[:50]}'")
+            si = 0
+
+        ei = text.find(end_marker, si)
+        if ei < 0:
+            ei = si + len(start_marker)
+        else:
+            ei += len(end_marker)
+
         seg_text = text[si:ei]
         wc = count_words(seg_text)
-        word_counts.append(wc)
 
-    total_words = sum(word_counts)
-
-    # Rozpočet páuz (8 veľkých prechodov medzi scénami × 1.5s)
-    pause_budget = 8 * 1.5
-    spoken_budget = total_duration - pause_budget
-
-    # Proporcionálne rozdelenie
-    raw_durations = [(wc / total_words) * spoken_budget for wc in word_counts]
-
-    # Titulná karta minimálne 5 sekúnd
-    raw_durations[0] = max(raw_durations[0], 5.0)
-
-    # Škáluj na presný celkový čas
-    scale = (total_duration - pause_budget) / sum(raw_durations)
-    durations = [d * scale for d in raw_durations]
-
-    # Indexy kde sú pauzy (pred týmito segmentmi)
-    # Zodpovedá "..." značkám v clean-text.txt
-    pause_before = {1, 3, 4, 7, 9, 11, 13, 15}
-
-    # Zostav časovú os
-    timeline = []
-    t = 0.0
-
-    for i in range(len(segments)):
-        name, _, _, img = segments[i]
-
-        if i in pause_before:
-            t += 1.5
-
-        start = t
-        end = t + durations[i]
+        # Pre titulnú kartu a morál nastav minimum slov
+        if seg.get("forced_duration"):
+            wc = max(wc, 1)
 
         timeline.append({
-            "name": name,
-            "image": img,
-            "start": round(start, 2),
-            "end": round(end, 2),
-            "duration": round(durations[i], 2),
-            "words": word_counts[i],
+            "name": seg["name"],
+            "image": seg["image"],
+            "words": wc,
+            "forced_duration": seg.get("forced_duration"),
         })
-        t = end
 
-    # Posledný segment presne na koniec audia
-    timeline[-1]["end"] = total_duration
-    timeline[-1]["duration"] = round(total_duration - timeline[-1]["start"], 2)
+    # Odpočítaj fixné trvania z celkového času
+    forced_total = sum(t["forced_duration"] for t in timeline if t["forced_duration"])
+    remaining_duration = total_duration - forced_total
+
+    # Celkový počet slov v nefixných segmentoch
+    variable_words = sum(t["words"] for t in timeline if not t["forced_duration"])
+    if variable_words == 0:
+        variable_words = 1
+
+    # Vypočítaj trvania
+    t = 0.0
+    for entry in timeline:
+        if entry["forced_duration"]:
+            dur = entry["forced_duration"]
+        else:
+            dur = (entry["words"] / variable_words) * remaining_duration
+            dur = max(dur, 3.0)  # Minimum 3 sekundy
+
+        entry["start"] = round(t, 2)
+        entry["duration"] = round(dur, 2)
+        entry["end"] = round(t + dur, 2)
+        t += dur
+
+    # Škáluj aby presne sedel na celkový čas
+    if timeline:
+        scale = total_duration / t if t > 0 else 1.0
+        t = 0.0
+        for entry in timeline:
+            if entry.get("forced_duration"):
+                entry["start"] = round(t, 2)
+                entry["end"] = round(t + entry["duration"], 2)
+                t += entry["duration"]
+            else:
+                dur = entry["duration"] * scale
+                entry["start"] = round(t, 2)
+                entry["duration"] = round(dur, 2)
+                entry["end"] = round(t + dur, 2)
+                t += dur
+
+        # Posledný segment presne na koniec
+        timeline[-1]["end"] = total_duration
+        timeline[-1]["duration"] = round(total_duration - timeline[-1]["start"], 2)
 
     return timeline
 
@@ -125,12 +190,6 @@ def build_ffmpeg_command(timeline: list, images_dir: Path, audio_path: Path,
                          output_path: Path, total_duration: float) -> list:
     """Zostaví FFmpeg príkaz pre slideshow video s crossfade prechodmi."""
 
-    # Krok 1: Najprv preškáluj obrázky na 1920x1080
-    # Krok 2: Zostav video z obrázkov s presným časovaním
-
-    # Použi concat demuxer pre najpresnejšie časovanie
-    # Najprv vytvor krátke video klipy pre každý obrázok, potom ich spoj
-
     inputs = []
     filter_parts = []
     concat_inputs = []
@@ -138,21 +197,22 @@ def build_ffmpeg_command(timeline: list, images_dir: Path, audio_path: Path,
     for i, seg in enumerate(timeline):
         img_path = images_dir / seg["image"]
 
-        # Display duration includes trailing pause (gap to next segment)
+        # Display duration = od začiatku tohto segmentu po začiatok ďalšieho
         if i < len(timeline) - 1:
             display_dur = round(timeline[i + 1]["start"] - seg["start"], 3)
         else:
             display_dur = round(total_duration - seg["start"], 3)
 
+        display_dur = max(display_dur, 0.1)
+
         inputs.extend(["-loop", "1", "-t", str(display_dur), "-i", str(img_path)])
 
-        # Škáluj na 1920x1080, pridaj fade-in/fade-out pre crossfade efekt
+        # Škáluj na 1920x1080, pridaj fade-in/fade-out
         fade_dur = 0.8
         fade_out_start = max(0, display_dur - fade_dur)
 
         scale = f"[{i}:v]scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=white,setsar=1"
 
-        # Fade-in pre všetky okrem prvého, fade-out pre všetky okrem posledného
         if i == 0:
             scale += f",fade=t=out:st={fade_out_start}:d={fade_dur}"
         elif i == len(timeline) - 1:
@@ -215,12 +275,22 @@ def main():
     print(f"   Dĺžka: {total_duration:.2f}s ({int(total_duration//60)}:{total_duration%60:05.2f})")
 
     # Načítaj text pre výpočet časovania
-    text_path = story_dir / "audio" / "clean-text.txt"
+    text_path = story_dir / "audio-text.txt"
+    if not text_path.exists():
+        text_path = story_dir / "audio" / "clean-text.txt"
     with open(text_path, "r", encoding="utf-8-sig") as f:
         text = f.read()
 
+    # Načítaj konfiguráciu segmentov
+    segments = load_segments_config(story_dir)
+    if segments:
+        print(f"📋 Načítaná konfigurácia: video/segments.json ({len(segments)} segmentov)")
+    else:
+        print(f"📋 Automatická segmentácia z obrázkov")
+        segments = auto_generate_segments(text, images_dir)
+
     # Vypočítaj časovú os
-    timeline = calculate_timeline(text, total_duration)
+    timeline = calculate_timeline(text, segments, total_duration)
 
     # Vypíš plán
     print(f"\n📋 Assembly Plan — {len(timeline)} segmentov\n")
@@ -267,7 +337,6 @@ def main():
 
     if result.returncode != 0:
         print(f"❌ FFmpeg chyba (exit code {result.returncode}):")
-        # Show last 30 lines of stderr
         stderr_lines = result.stderr.strip().split("\n")
         for line in stderr_lines[-30:]:
             print(f"   {line}")
@@ -276,7 +345,6 @@ def main():
     # Skontroluj výstup
     if output_path.exists():
         size_mb = output_path.stat().st_size / (1024 * 1024)
-        # Get output duration
         out_dur = get_audio_duration(output_path)
         print(f"\n✅ Video vytvorené!")
         print(f"   Súbor: {output_path}")

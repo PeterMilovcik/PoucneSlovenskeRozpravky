@@ -7,7 +7,7 @@ vekova_skupina: "6+"
 cas_citania_min: 10
 poucenie: "Kto má dar, má ho použiť na pomoc tým, čo to potrebujú. Skutočná sila nie je v moci, ale v ochote pomáhať."
 cover_image: /assets/images/odvazny-matej-a-traja-lapajovia/cover.png
-youtube_url: ""
+youtube_url: "https://www.youtube.com/watch?v=vRiEZGcmQCs"
 ---
 
 Kde bolo, tam bolo, za vysokými Tatrami, v jednom zelenom údolí, stála maličká dedinka. Domčeky mali červené strechy a biele múry, a okolo nich kvitli slnečnice ako malé slniečka. Každé ráno voňalo čerstvým chlebom z pekárne a potôčik cez dedinu zurčal tichučko ako zvonček. Na lúkach bzučali včielky a v korunách líp spievali drozdy.

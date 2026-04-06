@@ -57,9 +57,9 @@
       "length_minutes": 10,
       "word_count": 1440,
       "age_group": "6+",
-      "status": "text_ready",
+      "status": "fully_published",
       "created": "2026-04-06",
-      "published": null,
+      "published": "2026-04-06",
       "tags": [
         "odvaha",
         "pomoc",
@@ -95,10 +95,7 @@
         }
       ],
       "urls": {
-        "blog": null,
-        "youtube": null,
+        "blog": "https://petermilovcik.github.io/PoucneSlovenskeRozpravky/rozpravky/odvazny-matej-a-traja-lapajovia/",
+        "youtube": "https://www.youtube.com/watch?v=vRiEZGcmQCs",
         "spotify": null
       }
-    }
-  ]
-}

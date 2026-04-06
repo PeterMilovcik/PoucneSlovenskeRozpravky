@@ -1,0 +1,96 @@
+{
+  "description": "Mapovanie obrázkov na textové segmenty pre video O odvážnom Matejovi",
+  "segments": [
+    {
+      "name": "title",
+      "image": "cover-16x9.png",
+      "text_start": "Kde bolo, tam bolo",
+      "text_end": "Kde bolo, tam bolo",
+      "forced_duration": 4.0
+    },
+    {
+      "name": "scene-01",
+      "image": "scene-01.png",
+      "text_start": "Kde bolo, tam bolo",
+      "text_end": "spievali drozdy."
+    },
+    {
+      "name": "scene-02",
+      "image": "scene-02.png",
+      "text_start": "V tej dedinke žil",
+      "text_end": "skrýval."
+    },
+    {
+      "name": "scene-03",
+      "image": "scene-03.png",
+      "text_start": "Jedného krásneho letného rána",
+      "text_end": "poriadnu!"
+    },
+    {
+      "name": "scene-04",
+      "image": "scene-04.png",
+      "text_start": "Bartolomej ukradol pekárovi",
+      "text_end": "spred nosa."
+    },
+    {
+      "name": "scene-05",
+      "image": "scene-05.png",
+      "text_start": "Starosta Kubo, statný chlap",
+      "text_end": "s čím hrať."
+    },
+    {
+      "name": "scene-06",
+      "image": "scene-06.png",
+      "text_start": "Matej to všetko videl",
+      "text_end": "Ja to skúsim."
+    },
+    {
+      "name": "scene-07",
+      "image": "scene-07.png",
+      "text_start": "A viete, čo sa stalo potom?",
+      "text_end": "splašený zajac."
+    },
+    {
+      "name": "scene-08",
+      "image": "scene-08.png",
+      "text_start": "A to bol len prvý pokus.",
+      "text_end": "a zasa nič!"
+    },
+    {
+      "name": "scene-09",
+      "image": "scene-09.png",
+      "text_start": "Čo sa tu deje?!",
+      "text_end": "na oblohe."
+    },
+    {
+      "name": "scene-10",
+      "image": "scene-10.png",
+      "text_start": "Dvaja lapajovia boli preč.",
+      "text_end": "sa už nebál."
+    },
+    {
+      "name": "scene-11",
+      "image": "scene-11.png",
+      "text_start": "Bartolomej siahol po vreci",
+      "text_end": "nad lúkou."
+    },
+    {
+      "name": "scene-12",
+      "image": "scene-12.png",
+      "text_start": "Keď ráno starosta Kubo",
+      "text_end": "okolo neho."
+    },
+    {
+      "name": "scene-13",
+      "image": "scene-13.png",
+      "text_start": "Starosta Kubo pogratuloval",
+      "text_end": "šťastne dodnes."
+    },
+    {
+      "name": "moral",
+      "image": "cover-16x9.png",
+      "text_start": "Kto má silu pomôcť",
+      "text_end": "aj pre teba."
+    }
+  ]
+}

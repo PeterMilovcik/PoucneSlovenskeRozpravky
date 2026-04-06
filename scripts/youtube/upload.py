@@ -97,11 +97,24 @@ def upload_video(youtube, video_path: str, metadata: dict):
     print(f"Názov: {body['snippet']['title']}")
     
     response = None
+    retries = 0
+    max_retries = 5
     while response is None:
-        status, response = request.next_chunk()
-        if status:
-            progress = int(status.progress() * 100)
-            print(f"  Nahrané: {progress}%")
+        try:
+            status, response = request.next_chunk()
+            if status:
+                progress = int(status.progress() * 100)
+                print(f"  Nahrané: {progress}%")
+            retries = 0  # Reset on success
+        except Exception as e:
+            retries += 1
+            if retries > max_retries:
+                raise
+            wait = min(2 ** retries, 60)
+            print(f"  ⚠️ Chyba: {e}")
+            print(f"  Opakujem za {wait}s... (pokus {retries}/{max_retries})")
+            import time
+            time.sleep(wait)
     
     video_id = response["id"]
     video_url = f"https://www.youtube.com/watch?v={video_id}"

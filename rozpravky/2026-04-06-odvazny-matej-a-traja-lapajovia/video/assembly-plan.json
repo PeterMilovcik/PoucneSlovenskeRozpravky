@@ -1,0 +1,140 @@
+{
+  "total_duration": 631.350567,
+  "segments": [
+    {
+      "name": "title",
+      "image": "cover-16x9.png",
+      "words": 4,
+      "forced_duration": 4.0,
+      "start": 0.0,
+      "duration": 4.0,
+      "end": 4.0
+    },
+    {
+      "name": "scene-01",
+      "image": "scene-01.png",
+      "words": 54,
+      "forced_duration": null,
+      "start": 4.0,
+      "duration": 23.53,
+      "end": 27.53
+    },
+    {
+      "name": "scene-02",
+      "image": "scene-02.png",
+      "words": 123,
+      "forced_duration": null,
+      "start": 27.53,
+      "duration": 53.59,
+      "end": 81.12
+    },
+    {
+      "name": "scene-03",
+      "image": "scene-03.png",
+      "words": 72,
+      "forced_duration": null,
+      "start": 81.12,
+      "duration": 31.37,
+      "end": 112.49
+    },
+    {
+      "name": "scene-04",
+      "image": "scene-04.png",
+      "words": 34,
+      "forced_duration": null,
+      "start": 112.49,
+      "duration": 14.81,
+      "end": 127.3
+    },
+    {
+      "name": "scene-05",
+      "image": "scene-05.png",
+      "words": 55,
+      "forced_duration": null,
+      "start": 127.3,
+      "duration": 23.96,
+      "end": 151.26
+    },
+    {
+      "name": "scene-06",
+      "image": "scene-06.png",
+      "words": 106,
+      "forced_duration": null,
+      "start": 151.26,
+      "duration": 46.18,
+      "end": 197.44
+    },
+    {
+      "name": "scene-07",
+      "image": "scene-07.png",
+      "words": 137,
+      "forced_duration": null,
+      "start": 197.44,
+      "duration": 59.69,
+      "end": 257.13
+    },
+    {
+      "name": "scene-08",
+      "image": "scene-08.png",
+      "words": 88,
+      "forced_duration": null,
+      "start": 257.13,
+      "duration": 38.34,
+      "end": 295.47
+    },
+    {
+      "name": "scene-09",
+      "image": "scene-09.png",
+      "words": 68,
+      "forced_duration": null,
+      "start": 295.47,
+      "duration": 29.62,
+      "end": 325.09
+    },
+    {
+      "name": "scene-10",
+      "image": "scene-10.png",
+      "words": 120,
+      "forced_duration": null,
+      "start": 325.09,
+      "duration": 52.28,
+      "end": 377.37
+    },
+    {
+      "name": "scene-11",
+      "image": "scene-11.png",
+      "words": 168,
+      "forced_duration": null,
+      "start": 377.37,
+      "duration": 73.19,
+      "end": 450.56
+    },
+    {
+      "name": "scene-12",
+      "image": "scene-12.png",
+      "words": 103,
+      "forced_duration": null,
+      "start": 450.56,
+      "duration": 44.87,
+      "end": 495.43
+    },
+    {
+      "name": "scene-13",
+      "image": "scene-13.png",
+      "words": 277,
+      "forced_duration": null,
+      "start": 495.43,
+      "duration": 120.68,
+      "end": 616.11
+    },
+    {
+      "name": "moral",
+      "image": "cover-16x9.png",
+      "words": 35,
+      "forced_duration": null,
+      "start": 616.11,
+      "duration": 15.24,
+      "end": 631.350567
+    }
+  ]
+}
